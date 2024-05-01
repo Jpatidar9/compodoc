@@ -1,0 +1,3029 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>p3-server documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">p3-server documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  SubscriptionSubscriberObject</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>services/main-api/src/__generated__/types.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#resolve" 
+>
+                                            resolve
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#subscribe" 
+>
+                                            subscribe
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="resolve"></a>
+                                        <span class="name "><b>resolve</b>
+                                            <a href="#resolve">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>resolve:         <code><a href="../miscellaneous/typealiases.html#SubscriptionResolveFn" target="_self" >SubscriptionResolveFn&lt;TResult | TResult | TContext | TArgs&gt;</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#SubscriptionResolveFn" target="_self" >SubscriptionResolveFn&lt;TResult | TResult | TContext | TArgs&gt;</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="subscribe"></a>
+                                        <span class="name "><b>subscribe</b>
+                                            <a href="#subscribe">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>subscribe:         <code><a href="../miscellaneous/typealiases.html#SubscriptionSubscribeFn" target="_self" >SubscriptionSubscribeFn&lt;TResult | TParent | TContext | TArgs&gt;</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#SubscriptionSubscribeFn" target="_self" >SubscriptionSubscribeFn&lt;TResult | TParent | TContext | TArgs&gt;</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from &#x27;graphql&#x27;;
+export type Maybe&lt;T&gt; &#x3D; T | null;
+export type InputMaybe&lt;T&gt; &#x3D; Maybe&lt;T&gt;;
+export type Exact&lt;T extends { [key: string]: unknown }&gt; &#x3D; { [K in keyof T]: T[K] };
+export type MakeOptional&lt;T, K extends keyof T&gt; &#x3D; Omit&lt;T, K&gt; &amp; { [SubKey in K]?: Maybe&lt;T[SubKey]&gt; };
+export type MakeMaybe&lt;T, K extends keyof T&gt; &#x3D; Omit&lt;T, K&gt; &amp; { [SubKey in K]: Maybe&lt;T[SubKey]&gt; };
+export type MakeEmpty&lt;T extends { [key: string]: unknown }, K extends keyof T&gt; &#x3D; { [_ in K]?: never };
+export type Incremental&lt;T&gt; &#x3D; T | { [P in keyof T]?: P extends &#x27; $fragmentName&#x27; | &#x27;__typename&#x27; ? T[P] : never };
+export type RequireFields&lt;T, K extends keyof T&gt; &#x3D; Omit&lt;T, K&gt; &amp; { [P in K]-?: NonNullable&lt;T[P]&gt; };
+/** All built-in and custom scalars, mapped to their actual values */
+export type Scalars &#x3D; {
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
+  AWSDate: { input: string; output: string; }
+  AWSDateTime: { input: string; output: string; }
+  AWSEmail: { input: string; output: string; }
+  AWSIPAddress: { input: string; output: string; }
+  AWSJSON: { input: string; output: string; }
+  AWSPhone: { input: string; output: string; }
+  AWSTime: { input: string; output: string; }
+  AWSTimestamp: { input: number; output: number; }
+  AWSURL: { input: string; output: string; }
+};
+
+export type Block &#x3D; {
+  __typename?: &#x27;Block&#x27;;
+  blockedUserId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  blockedUserName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  title: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  type: BlockType;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type BlockPagedList &#x3D; {
+  __typename?: &#x27;BlockPagedList&#x27;;
+  items: Array&lt;Block&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export enum BlockType {
+  Mentee &#x3D; &#x27;MENTEE&#x27;,
+  Mentor &#x3D; &#x27;MENTOR&#x27;
+}
+
+export type Bookmark &#x3D; {
+  __typename?: &#x27;Bookmark&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  post: Post;
+  postCreatedAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  postId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postTitle: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  user: User;
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type BookmarkPagedList &#x3D; {
+  __typename?: &#x27;BookmarkPagedList&#x27;;
+  items: Array&lt;BookmarkSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type BookmarkSummary &#x3D; {
+  __typename?: &#x27;BookmarkSummary&#x27;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  postCreatedAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  postId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postTitle: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type Career &#x3D; {
+  __typename?: &#x27;Career&#x27;;
+  careerPath: CareerPath;
+  careerPathId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  description: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  imageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  intro: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  order: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  salary: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type CareerPath &#x3D; {
+  __typename?: &#x27;CareerPath&#x27;;
+  careers?: Maybe&lt;CareersPagedList&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  description: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  imageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  intro: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  order: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+
+export type CareerPathCareersArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type CareerPathPagedList &#x3D; {
+  __typename?: &#x27;CareerPathPagedList&#x27;;
+  items: Array&lt;CareerPathSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type CareerPathSummary &#x3D; {
+  __typename?: &#x27;CareerPathSummary&#x27;;
+  careers?: Maybe&lt;CareersPagedList&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  description: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  imageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  intro: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  order: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+
+export type CareerPathSummaryCareersArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type CareerSummary &#x3D; {
+  __typename?: &#x27;CareerSummary&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  description: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  imageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  intro: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  order: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  salary: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type CareersPagedList &#x3D; {
+  __typename?: &#x27;CareersPagedList&#x27;;
+  items: Array&lt;CareerSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type Connection &#x3D; {
+  __typename?: &#x27;Connection&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  menteeId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  menteeName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  menteeProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorIsExpert?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  mentorIsGuide?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  mentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  status: ConnectionStatus;
+  type: ConnectionType;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type ConnectionPagedList &#x3D; {
+  __typename?: &#x27;ConnectionPagedList&#x27;;
+  items: Array&lt;ConnectionSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export enum ConnectionStatus {
+  Active &#x3D; &#x27;ACTIVE&#x27;,
+  Inactive &#x3D; &#x27;INACTIVE&#x27;,
+  Pending &#x3D; &#x27;PENDING&#x27;
+}
+
+export type ConnectionSummary &#x3D; {
+  __typename?: &#x27;ConnectionSummary&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  menteeId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  menteeName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  menteeProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorIsExpert?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  mentorIsGuide?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  mentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  status: ConnectionStatus;
+  type: ConnectionType;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export enum ConnectionType {
+  Follow &#x3D; &#x27;FOLLOW&#x27;,
+  Mentorship &#x3D; &#x27;MENTORSHIP&#x27;
+}
+
+export type CreateBlockInput &#x3D; {
+  blockedUserId: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  type: BlockType;
+};
+
+export type CreateCareerInput &#x3D; {
+  careerPathId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  description: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  intro: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  salary: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type CreateCareerPathInput &#x3D; {
+  description: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  intro: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type CreateConnectionInput &#x3D; {
+  mentorId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  type: ConnectionType;
+};
+
+export type DeleteConnectionInput &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+export type Education &#x3D; {
+  __typename?: &#x27;Education&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type EducationPagedList &#x3D; {
+  __typename?: &#x27;EducationPagedList&#x27;;
+  items: Array&lt;EducationSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type EducationSummary &#x3D; {
+  __typename?: &#x27;EducationSummary&#x27;;
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type Feed &#x3D; {
+  __typename?: &#x27;Feed&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  post: Post;
+  postCreatedAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  postId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postTitle: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  user: User;
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type FeedPagedList &#x3D; {
+  __typename?: &#x27;FeedPagedList&#x27;;
+  items: Array&lt;FeedSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type FeedSummary &#x3D; {
+  __typename?: &#x27;FeedSummary&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  postCreatedAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  postId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postMentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postTitle: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type Future &#x3D; {
+  __typename?: &#x27;Future&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type FuturePagedList &#x3D; {
+  __typename?: &#x27;FuturePagedList&#x27;;
+  items: Array&lt;FutureSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type FutureSummary &#x3D; {
+  __typename?: &#x27;FutureSummary&#x27;;
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type Guidance &#x3D; {
+  __typename?: &#x27;Guidance&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type GuidanceInput &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  name?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type GuidancePagedList &#x3D; {
+  __typename?: &#x27;GuidancePagedList&#x27;;
+  items: Array&lt;GuidanceSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type GuidanceSummary &#x3D; {
+  __typename?: &#x27;GuidanceSummary&#x27;;
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type Industry &#x3D; {
+  __typename?: &#x27;Industry&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type IndustryInput &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  name?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type IndustryPagedList &#x3D; {
+  __typename?: &#x27;IndustryPagedList&#x27;;
+  items: Array&lt;IndustrySummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type IndustrySummary &#x3D; {
+  __typename?: &#x27;IndustrySummary&#x27;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type Me &#x3D; {
+  __typename?: &#x27;Me&#x27;;
+  algoliaApiKey?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  blocks?: Maybe&lt;BlockPagedList&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  dob?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  email: Scalars[&#x27;AWSEmail&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  feed: FeedPagedList;
+  firstName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  gender?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  isSystemAdministrator?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  lastName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  location?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentee?: Maybe&lt;Mentee&gt;;
+  mentor?: Maybe&lt;Mentor&gt;;
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  profilePicS3SignedUrl?: Maybe&lt;MediaUploadResponse&gt;;
+  reports: ReportPagedList;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  zipCode?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+
+export type MeBlocksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MeFeedArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MeReportsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type MediaUploadResponse &#x3D; {
+  __typename?: &#x27;MediaUploadResponse&#x27;;
+  mediaId?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mediaUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  s3PutObjectUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type MeetFrequency &#x3D; {
+  __typename?: &#x27;MeetFrequency&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  sequenceNo: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type MeetFrequencyPagedList &#x3D; {
+  __typename?: &#x27;MeetFrequencyPagedList&#x27;;
+  items: Array&lt;MeetFrequencySummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type MeetFrequencySummary &#x3D; {
+  __typename?: &#x27;MeetFrequencySummary&#x27;;
+  expertWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  guideWeight: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  sequenceNo: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type Mentee &#x3D; {
+  __typename?: &#x27;Mentee&#x27;;
+  blocks?: Maybe&lt;BlockPagedList&gt;;
+  bookmarks?: Maybe&lt;BookmarkPagedList&gt;;
+  checkAvailableBookmarks?: Maybe&lt;BookmarkPagedList&gt;;
+  connections?: Maybe&lt;ConnectionPagedList&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  education: EducationSummary;
+  educationId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  future: FutureSummary;
+  futureId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  guidances: Array&lt;GuidanceSummary&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  meetFrequency: MeetFrequencySummary;
+  meetFrequencyId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  noOfBookmarks?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfQuestions?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfFollowings?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfMentorships?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  postViews?: Maybe&lt;ViewPostPagedList&gt;;
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questions?: Maybe&lt;QuestionPagedList&gt;;
+  reports?: Maybe&lt;ReportPagedList&gt;;
+  seekingExpert: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  seekingGuide: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  status: MenteeStatus;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+
+export type MenteeBlocksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MenteeBookmarksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MenteeCheckAvailableBookmarksArgs &#x3D; {
+  postIds?: InputMaybe&lt;Array&lt;InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;&gt;&gt;;
+};
+
+
+export type MenteeConnectionsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  mentorId?: InputMaybe&lt;Scalars[&#x27;ID&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  status?: InputMaybe&lt;ConnectionStatus&gt;;
+  type?: InputMaybe&lt;ConnectionType&gt;;
+};
+
+
+export type MenteePostViewsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MenteeQuestionsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MenteeReportsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type MenteePagedList &#x3D; {
+  __typename?: &#x27;MenteePagedList&#x27;;
+  items: Array&lt;MenteeSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export enum MenteeStatus {
+  Approved &#x3D; &#x27;APPROVED&#x27;,
+  Cancelled &#x3D; &#x27;CANCELLED&#x27;,
+  Declined &#x3D; &#x27;DECLINED&#x27;,
+  Pending &#x3D; &#x27;PENDING&#x27;,
+  Suspended &#x3D; &#x27;SUSPENDED&#x27;
+}
+
+export type MenteeSummary &#x3D; {
+  __typename?: &#x27;MenteeSummary&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  education: EducationSummary;
+  educationId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  future: FutureSummary;
+  futureId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  meetFrequency: MeetFrequencySummary;
+  meetFrequencyId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  noOfBookmarks?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfQuestions?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfFollowings?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfMentorships?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  seekingExpert: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  seekingGuide: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  status: MenteeStatus;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type Mentor &#x3D; {
+  __typename?: &#x27;Mentor&#x27;;
+  availability?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  bio?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  blocks?: Maybe&lt;BlockPagedList&gt;;
+  connections?: Maybe&lt;ConnectionPagedList&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  education: EducationSummary;
+  educationId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  guidances: Array&lt;GuidanceSummary&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  industries: Array&lt;IndustrySummary&gt;;
+  introductionPosts?: Maybe&lt;PostPagedList&gt;;
+  isExpert: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  isGuide: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  jobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  linkedInProfile?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  meetFrequency: MeetFrequencySummary;
+  meetFrequencyId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  mentoringCapacity: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  noOfActiveVideos?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfPosts?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfQuestions?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfUnreadQuestions?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfFollowers?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfMentorships?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  posts?: Maybe&lt;PostPagedList&gt;;
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questions?: Maybe&lt;QuestionPagedList&gt;;
+  reports?: Maybe&lt;ReportPagedList&gt;;
+  status: MentorStatus;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+
+export type MentorBlocksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MentorConnectionsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  menteeId?: InputMaybe&lt;Scalars[&#x27;ID&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  status?: InputMaybe&lt;ConnectionStatus&gt;;
+  type?: InputMaybe&lt;ConnectionType&gt;;
+};
+
+
+export type MentorIntroductionPostsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MentorPostsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  statuses?: InputMaybe&lt;Array&lt;InputMaybe&lt;PostStatus&gt;&gt;&gt;;
+  types?: InputMaybe&lt;Array&lt;InputMaybe&lt;PostType&gt;&gt;&gt;;
+};
+
+
+export type MentorQuestionsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type MentorReportsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type MentorPagedList &#x3D; {
+  __typename?: &#x27;MentorPagedList&#x27;;
+  items: Array&lt;MentorSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export enum MentorStatus {
+  Approved &#x3D; &#x27;APPROVED&#x27;,
+  Cancelled &#x3D; &#x27;CANCELLED&#x27;,
+  Declined &#x3D; &#x27;DECLINED&#x27;,
+  Pending &#x3D; &#x27;PENDING&#x27;,
+  Suspended &#x3D; &#x27;SUSPENDED&#x27;
+}
+
+export type MentorSummary &#x3D; {
+  __typename?: &#x27;MentorSummary&#x27;;
+  availability?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  bio?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  education: EducationSummary;
+  educationId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  isExpert: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  isGuide: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  jobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  linkedInProfile?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  meetFrequency: MeetFrequencySummary;
+  meetFrequencyId: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  mentoringCapacity: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  noOfActiveVideos?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfPosts?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfQuestions?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  noOfUnreadQuestions?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfFollowers?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfMentorships?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  status: MentorStatus;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type Mutation &#x3D; {
+  __typename?: &#x27;Mutation&#x27;;
+  createBlock: Block;
+  createCareer: Career;
+  createCareerPath: CareerPath;
+  createConnection: Connection;
+  createMentee: Mentee;
+  createMentor: Mentor;
+  createPostS3SignedUrl: PostS3Signed;
+  createQuestion: Question;
+  createReport: Report;
+  createViewPost: ViewPost;
+  deleteAccount: UserSummary;
+  deleteBlock: Block;
+  deleteCareer: Career;
+  deleteCareerPath: CareerPath;
+  deleteConnection: Connection;
+  deletePost: Post;
+  deleteQuestion: Question;
+  deleteQuestionResponse: Question;
+  deleteReport: Report;
+  readQuestion: Question;
+  toggleBookmark: Bookmark;
+  togglePostFeatured: Post;
+  updateCareer: Career;
+  updateCareerOrder: Career;
+  updateCareerPath: CareerPath;
+  updateCareerPathOrder: CareerPath;
+  updateConnectionTypeById: Connection;
+  updateMenteeSurvey: Mentee;
+  updateMentorStatus: Mentor;
+  updatePersonalDetails: Me;
+  updatePostStatus: Post;
+  updateProfessionalDetails: Mentor;
+  updateQuestion: Question;
+  updateReport: Report;
+};
+
+
+export type MutationCreateBlockArgs &#x3D; {
+  input: CreateBlockInput;
+};
+
+
+export type MutationCreateCareerArgs &#x3D; {
+  input: CreateCareerInput;
+};
+
+
+export type MutationCreateCareerPathArgs &#x3D; {
+  input: CreateCareerPathInput;
+};
+
+
+export type MutationCreateConnectionArgs &#x3D; {
+  input?: InputMaybe&lt;CreateConnectionInput&gt;;
+};
+
+
+export type MutationCreateMenteeArgs &#x3D; {
+  input: CreateMenteeInput;
+};
+
+
+export type MutationCreateMentorArgs &#x3D; {
+  input: CreateMentorInput;
+};
+
+
+export type MutationCreatePostS3SignedUrlArgs &#x3D; {
+  input: CreatePostS3SignedUrlInput;
+};
+
+
+export type MutationCreateQuestionArgs &#x3D; {
+  input: CreateQuestionInput;
+};
+
+
+export type MutationCreateReportArgs &#x3D; {
+  input: ReportInput;
+};
+
+
+export type MutationCreateViewPostArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationDeleteBlockArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationDeleteCareerArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationDeleteCareerPathArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationDeleteConnectionArgs &#x3D; {
+  input?: InputMaybe&lt;DeleteConnectionInput&gt;;
+};
+
+
+export type MutationDeletePostArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationDeleteQuestionArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationDeleteQuestionResponseArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationDeleteReportArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationReadQuestionArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationToggleBookmarkArgs &#x3D; {
+  postId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationTogglePostFeaturedArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type MutationUpdateCareerArgs &#x3D; {
+  input: UpdateCareerInput;
+};
+
+
+export type MutationUpdateCareerOrderArgs &#x3D; {
+  input: UpdateCareerOrderInput;
+};
+
+
+export type MutationUpdateCareerPathArgs &#x3D; {
+  input: UpdateCareerPathInput;
+};
+
+
+export type MutationUpdateCareerPathOrderArgs &#x3D; {
+  input: UpdateCareerPathOrderInput;
+};
+
+
+export type MutationUpdateConnectionTypeByIdArgs &#x3D; {
+  input?: InputMaybe&lt;UpdateConnectionTypeInput&gt;;
+};
+
+
+export type MutationUpdateMenteeSurveyArgs &#x3D; {
+  input: UpdateMenteeSurveyInput;
+};
+
+
+export type MutationUpdateMentorStatusArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  status: MentorStatus;
+};
+
+
+export type MutationUpdatePersonalDetailsArgs &#x3D; {
+  input: UpdatePersonalDetailsInput;
+};
+
+
+export type MutationUpdatePostStatusArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  status: PostStatus;
+};
+
+
+export type MutationUpdateProfessionalDetailsArgs &#x3D; {
+  input: UpdateProfessionalInput;
+};
+
+
+export type MutationUpdateQuestionArgs &#x3D; {
+  input: UpdateQuestionInput;
+};
+
+
+export type MutationUpdateReportArgs &#x3D; {
+  input: UpdateReportInput;
+};
+
+export type Post &#x3D; {
+  __typename?: &#x27;Post&#x27;;
+  bookmarks?: Maybe&lt;BookmarkPagedList&gt;;
+  connectionWithMe?: Maybe&lt;ConnectionPagedList&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  description: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  featuredAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  guidances: Array&lt;GuidanceSummary&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  imageUrl: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  industries: Array&lt;IndustrySummary&gt;;
+  isFeatured?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  mentor: Mentor;
+  mentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorName?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfViews?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  question?: Maybe&lt;Question&gt;;
+  questionBody?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questionId?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questionMenteeId?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questionMenteeName?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  reports?: Maybe&lt;ReportPagedList&gt;;
+  status: PostStatus;
+  title: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  type: PostType;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  videoDuration: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  videoKey: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  videoSignedUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  views?: Maybe&lt;ViewPostPagedList&gt;;
+};
+
+
+export type PostBookmarksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type PostReportsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type PostViewsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type PostPagedList &#x3D; {
+  __typename?: &#x27;PostPagedList&#x27;;
+  items: Array&lt;PostSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type PostS3Signed &#x3D; {
+  __typename?: &#x27;PostS3Signed&#x27;;
+  mediaId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mediaUrl: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  s3PutObjectUrl: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export enum PostStatus {
+  Approved &#x3D; &#x27;APPROVED&#x27;,
+  Cancelled &#x3D; &#x27;CANCELLED&#x27;,
+  Declined &#x3D; &#x27;DECLINED&#x27;,
+  Pending &#x3D; &#x27;PENDING&#x27;,
+  Suspended &#x3D; &#x27;SUSPENDED&#x27;
+}
+
+export type PostSummary &#x3D; {
+  __typename?: &#x27;PostSummary&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  description: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  featuredAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  guidances: Array&lt;GuidanceSummary&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  imageUrl: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  industries: Array&lt;IndustrySummary&gt;;
+  isFeatured?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  mentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorJobTitle?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorName?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  numberOfViews?: Maybe&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  questionBody?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questionId?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questionMenteeId?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  questionMenteeName?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  status: PostStatus;
+  title: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  type: PostType;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  videoDuration: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export enum PostType {
+  Introduction &#x3D; &#x27;INTRODUCTION&#x27;,
+  Reply &#x3D; &#x27;REPLY&#x27;,
+  SelfUploaded &#x3D; &#x27;SELF_UPLOADED&#x27;
+}
+
+export type Query &#x3D; {
+  __typename?: &#x27;Query&#x27;;
+  getBlockById: Block;
+  getCareerById: Career;
+  getCareerPathById: CareerPath;
+  getMe: Me;
+  getMenteeById: Mentee;
+  getMentorById: Mentor;
+  getPostById: Post;
+  getQuestionById: Question;
+  getReportById: Report;
+  getUserByEmail: User;
+  getUserById: User;
+  getUserByUserName: User;
+  latestPosts: PostPagedList;
+  listBlocks?: Maybe&lt;BlockPagedList&gt;;
+  listCareerPaths: CareerPathPagedList;
+  listEducation: EducationPagedList;
+  listFutures: FuturePagedList;
+  listGuidances: GuidancePagedList;
+  listIndustries: IndustryPagedList;
+  listMeetFrequencies: MeetFrequencyPagedList;
+  listMentees: MenteePagedList;
+  listMentors: MentorPagedList;
+  listPosts?: Maybe&lt;PostPagedList&gt;;
+  listQuestions?: Maybe&lt;QuestionPagedList&gt;;
+  listReports?: Maybe&lt;ReportPagedList&gt;;
+  listUsers: UsersPagedList;
+};
+
+
+export type QueryGetBlockByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetCareerByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetCareerPathByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetMenteeByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetMentorByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetPostByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetQuestionByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetReportByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetUserByEmailArgs &#x3D; {
+  email: Scalars[&#x27;AWSEmail&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetUserByIdArgs &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryGetUserByUserNameArgs &#x3D; {
+  userName: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+
+export type QueryLatestPostsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListBlocksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  types?: InputMaybe&lt;Array&lt;InputMaybe&lt;BlockType&gt;&gt;&gt;;
+};
+
+
+export type QueryListCareerPathsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListEducationArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListFuturesArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListGuidancesArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListIndustriesArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListMeetFrequenciesArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListMenteesArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  status?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListMentorsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  status?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListPostsArgs &#x3D; {
+  isFeatured?: InputMaybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;input&#x27;]&gt;;
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  statuses?: InputMaybe&lt;Array&lt;InputMaybe&lt;PostStatus&gt;&gt;&gt;;
+  types?: InputMaybe&lt;Array&lt;InputMaybe&lt;PostType&gt;&gt;&gt;;
+};
+
+
+export type QueryListQuestionsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type QueryListReportsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  statuses?: InputMaybe&lt;Array&lt;InputMaybe&lt;ReportStatus&gt;&gt;&gt;;
+  types?: InputMaybe&lt;Array&lt;InputMaybe&lt;ReportType&gt;&gt;&gt;;
+};
+
+
+export type QueryListUsersArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  startsWith?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type Question &#x3D; {
+  __typename?: &#x27;Question&#x27;;
+  active: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  additionalDetails: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  menteeId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  menteeName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  question: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  reportedByMe?: Maybe&lt;Report&gt;;
+  reports?: Maybe&lt;ReportPagedList&gt;;
+  status: QuestionStatus;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+
+export type QuestionReportsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type QuestionPagedList &#x3D; {
+  __typename?: &#x27;QuestionPagedList&#x27;;
+  items: Array&lt;QuestionSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export enum QuestionStatus {
+  Read &#x3D; &#x27;READ&#x27;,
+  Replied &#x3D; &#x27;REPLIED&#x27;,
+  Unread &#x3D; &#x27;UNREAD&#x27;
+}
+
+export type QuestionSummary &#x3D; {
+  __typename?: &#x27;QuestionSummary&#x27;;
+  active: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  additionalDetails: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  menteeId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  menteeName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  mentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  question: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  status: QuestionStatus;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type Report &#x3D; {
+  __typename?: &#x27;Report&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  entityId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  notes?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  reason?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  status: ReportStatus;
+  title: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  type: ReportType;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type ReportInput &#x3D; {
+  entityId: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  reason: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  type: ReportType;
+};
+
+export type ReportPagedList &#x3D; {
+  __typename?: &#x27;ReportPagedList&#x27;;
+  items: Array&lt;Report&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export enum ReportStatus {
+  Pending &#x3D; &#x27;PENDING&#x27;,
+  Resolved &#x3D; &#x27;RESOLVED&#x27;
+}
+
+export enum ReportType {
+  Mentee &#x3D; &#x27;MENTEE&#x27;,
+  Mentor &#x3D; &#x27;MENTOR&#x27;,
+  Post &#x3D; &#x27;POST&#x27;,
+  Question &#x3D; &#x27;QUESTION&#x27;
+}
+
+export type UpdateCareerInput &#x3D; {
+  description?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  intro?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  name?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  salary?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type UpdateCareerOrderInput &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  order: Scalars[&#x27;Int&#x27;][&#x27;input&#x27;];
+};
+
+export type UpdateCareerPathInput &#x3D; {
+  description: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  intro: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type UpdateCareerPathOrderInput &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  order: Scalars[&#x27;Int&#x27;][&#x27;input&#x27;];
+};
+
+export type UpdateConnectionTypeInput &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  status: ConnectionStatus;
+};
+
+export type User &#x3D; {
+  __typename?: &#x27;User&#x27;;
+  blocks?: Maybe&lt;BlockPagedList&gt;;
+  bookmarks?: Maybe&lt;BookmarkPagedList&gt;;
+  cognitoSubs: Array&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  dob?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  email: Scalars[&#x27;AWSEmail&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  feed?: Maybe&lt;FeedPagedList&gt;;
+  firstName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  gender?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  isSystemAdministrator?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  lastName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  location?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  mentee?: Maybe&lt;Mentee&gt;;
+  mentor?: Maybe&lt;Mentor&gt;;
+  postViews?: Maybe&lt;ViewPostPagedList&gt;;
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  reports?: Maybe&lt;ReportPagedList&gt;;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  zipCode?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+
+export type UserBlocksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type UserBookmarksArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type UserFeedArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type UserPostViewsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+
+export type UserReportsArgs &#x3D; {
+  limit?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+  nextToken?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type UserProfileImageUploadInput &#x3D; {
+  contentType: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type UserSummary &#x3D; {
+  __typename?: &#x27;UserSummary&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  dob?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  email: Scalars[&#x27;AWSEmail&#x27;][&#x27;output&#x27;];
+  entity: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  firstName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  gender?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  isSystemAdministrator?: Maybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  lastName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  location?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  zipCode?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type UsersPagedList &#x3D; {
+  __typename?: &#x27;UsersPagedList&#x27;;
+  items: Array&lt;UserSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type ViewPost &#x3D; {
+  __typename?: &#x27;ViewPost&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  post: Post;
+  postCreatedAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  postId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postTitle: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  profileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  user: User;
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+};
+
+export type ViewPostPagedList &#x3D; {
+  __typename?: &#x27;ViewPostPagedList&#x27;;
+  items: Array&lt;ViewPostSummary&gt;;
+  nextToken?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type ViewPostSummary &#x3D; {
+  __typename?: &#x27;ViewPostSummary&#x27;;
+  createdAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  id: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  postCreatedAt: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  postId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  postMentorProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  postTitle: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  updatedAt?: Maybe&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  userId: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userName: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  userProfileImageUrl?: Maybe&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+};
+
+export type CreateMenteeInput &#x3D; {
+  educationId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  futureId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  guidances: Array&lt;GuidanceInput&gt;;
+  meetFrequencyId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type CreateMentorInput &#x3D; {
+  educationId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  guidances: Array&lt;GuidanceInput&gt;;
+  industries: Array&lt;IndustryInput&gt;;
+  meetFrequencyId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  mentoringCapacity: Scalars[&#x27;Int&#x27;][&#x27;input&#x27;];
+  name: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type CreatePostS3SignedUrlInput &#x3D; {
+  description: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  guidances: Array&lt;GuidanceInput&gt;;
+  industries: Array&lt;IndustryInput&gt;;
+  postId?: InputMaybe&lt;Scalars[&#x27;ID&#x27;][&#x27;input&#x27;]&gt;;
+  questionId?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  title: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  type: PostType;
+  videoDuration: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type CreateQuestionInput &#x3D; {
+  additionalDetails: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  mentorId: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  question: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type PostInput &#x3D; {
+  description: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  guidances: Array&lt;GuidanceInput&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  imageUrl: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  industries: Array&lt;IndustryInput&gt;;
+  mentorId?: InputMaybe&lt;Scalars[&#x27;ID&#x27;][&#x27;input&#x27;]&gt;;
+  questionBody?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  questionId?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  questionMenteeId?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  questionMenteeName?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  title: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  type: PostType;
+  videoDuration: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  videoKey: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  videoUrl: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+};
+
+export type UpdateMenteeSurveyInput &#x3D; {
+  educationId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  futureId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  guidances: Array&lt;GuidanceInput&gt;;
+  meetFrequencyId: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+};
+
+export type UpdatePersonalDetailsInput &#x3D; {
+  firstName?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  gender?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  lastName?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  location?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  zipCode?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type UpdateProfessionalInput &#x3D; {
+  availability?: InputMaybe&lt;Scalars[&#x27;Boolean&#x27;][&#x27;input&#x27;]&gt;;
+  bio?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  jobTitle?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  linkedInProfile?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  mentoringCapacity?: InputMaybe&lt;Scalars[&#x27;Int&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type UpdateQuestionInput &#x3D; {
+  additionalDetails?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  question?: InputMaybe&lt;Scalars[&#x27;String&#x27;][&#x27;input&#x27;]&gt;;
+};
+
+export type UpdateReportInput &#x3D; {
+  id: Scalars[&#x27;ID&#x27;][&#x27;input&#x27;];
+  notes: Scalars[&#x27;String&#x27;][&#x27;input&#x27;];
+  status: ReportStatus;
+};
+
+export type WithIndex&lt;TObject&gt; &#x3D; TObject &amp; Record&lt;string, any&gt;;
+export type ResolversObject&lt;TObject&gt; &#x3D; WithIndex&lt;TObject&gt;;
+
+export type ResolverTypeWrapper&lt;T&gt; &#x3D; Promise&lt;T&gt; | T;
+
+export type Resolver&lt;TResult, TParent &#x3D; {}, TContext &#x3D; {}, TArgs &#x3D; {}&gt; &#x3D; ResolverFn&lt;TResult, TParent, TContext, TArgs&gt;;
+
+export type ResolverFn&lt;TResult, TParent, TContext, TArgs&gt; &#x3D; (
+  parent: TParent,
+  args: TArgs,
+  context: TContext,
+  info: GraphQLResolveInfo
+) &#x3D;&gt; Promise&lt;TResult&gt; | TResult;
+
+export type SubscriptionSubscribeFn&lt;TResult, TParent, TContext, TArgs&gt; &#x3D; (
+  parent: TParent,
+  args: TArgs,
+  context: TContext,
+  info: GraphQLResolveInfo
+) &#x3D;&gt; AsyncIterable&lt;TResult&gt; | Promise&lt;AsyncIterable&lt;TResult&gt;&gt;;
+
+export type SubscriptionResolveFn&lt;TResult, TParent, TContext, TArgs&gt; &#x3D; (
+  parent: TParent,
+  args: TArgs,
+  context: TContext,
+  info: GraphQLResolveInfo
+) &#x3D;&gt; TResult | Promise&lt;TResult&gt;;
+
+export interface SubscriptionSubscriberObject&lt;TResult, TKey extends string, TParent, TContext, TArgs&gt; {
+  subscribe: SubscriptionSubscribeFn&lt;{ [key in TKey]: TResult }, TParent, TContext, TArgs&gt;;
+  resolve?: SubscriptionResolveFn&lt;TResult, { [key in TKey]: TResult }, TContext, TArgs&gt;;
+}
+
+export interface SubscriptionResolverObject&lt;TResult, TParent, TContext, TArgs&gt; {
+  subscribe: SubscriptionSubscribeFn&lt;any, TParent, TContext, TArgs&gt;;
+  resolve: SubscriptionResolveFn&lt;TResult, any, TContext, TArgs&gt;;
+}
+
+export type SubscriptionObject&lt;TResult, TKey extends string, TParent, TContext, TArgs&gt; &#x3D;
+  | SubscriptionSubscriberObject&lt;TResult, TKey, TParent, TContext, TArgs&gt;
+  | SubscriptionResolverObject&lt;TResult, TParent, TContext, TArgs&gt;;
+
+export type SubscriptionResolver&lt;TResult, TKey extends string, TParent &#x3D; {}, TContext &#x3D; {}, TArgs &#x3D; {}&gt; &#x3D;
+  | ((...args: any[]) &#x3D;&gt; SubscriptionObject&lt;TResult, TKey, TParent, TContext, TArgs&gt;)
+  | SubscriptionObject&lt;TResult, TKey, TParent, TContext, TArgs&gt;;
+
+export type TypeResolveFn&lt;TTypes, TParent &#x3D; {}, TContext &#x3D; {}&gt; &#x3D; (
+  parent: TParent,
+  context: TContext,
+  info: GraphQLResolveInfo
+) &#x3D;&gt; Maybe&lt;TTypes&gt; | Promise&lt;Maybe&lt;TTypes&gt;&gt;;
+
+export type IsTypeOfResolverFn&lt;T &#x3D; {}, TContext &#x3D; {}&gt; &#x3D; (obj: T, context: TContext, info: GraphQLResolveInfo) &#x3D;&gt; boolean | Promise&lt;boolean&gt;;
+
+export type NextResolverFn&lt;T&gt; &#x3D; () &#x3D;&gt; Promise&lt;T&gt;;
+
+export type DirectiveResolverFn&lt;TResult &#x3D; {}, TParent &#x3D; {}, TContext &#x3D; {}, TArgs &#x3D; {}&gt; &#x3D; (
+  next: NextResolverFn&lt;TResult&gt;,
+  parent: TParent,
+  args: TArgs,
+  context: TContext,
+  info: GraphQLResolveInfo
+) &#x3D;&gt; TResult | Promise&lt;TResult&gt;;
+
+
+
+/** Mapping between all available schema types and the resolvers types */
+export type ResolversTypes &#x3D; ResolversObject&lt;{
+  AWSDate: ResolverTypeWrapper&lt;Scalars[&#x27;AWSDate&#x27;][&#x27;output&#x27;]&gt;;
+  AWSDateTime: ResolverTypeWrapper&lt;Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;]&gt;;
+  AWSEmail: ResolverTypeWrapper&lt;Scalars[&#x27;AWSEmail&#x27;][&#x27;output&#x27;]&gt;;
+  AWSIPAddress: ResolverTypeWrapper&lt;Scalars[&#x27;AWSIPAddress&#x27;][&#x27;output&#x27;]&gt;;
+  AWSJSON: ResolverTypeWrapper&lt;Scalars[&#x27;AWSJSON&#x27;][&#x27;output&#x27;]&gt;;
+  AWSPhone: ResolverTypeWrapper&lt;Scalars[&#x27;AWSPhone&#x27;][&#x27;output&#x27;]&gt;;
+  AWSTime: ResolverTypeWrapper&lt;Scalars[&#x27;AWSTime&#x27;][&#x27;output&#x27;]&gt;;
+  AWSTimestamp: ResolverTypeWrapper&lt;Scalars[&#x27;AWSTimestamp&#x27;][&#x27;output&#x27;]&gt;;
+  AWSURL: ResolverTypeWrapper&lt;Scalars[&#x27;AWSURL&#x27;][&#x27;output&#x27;]&gt;;
+  Block: ResolverTypeWrapper&lt;Block&gt;;
+  BlockPagedList: ResolverTypeWrapper&lt;BlockPagedList&gt;;
+  BlockType: BlockType;
+  Bookmark: ResolverTypeWrapper&lt;Bookmark&gt;;
+  BookmarkPagedList: ResolverTypeWrapper&lt;BookmarkPagedList&gt;;
+  BookmarkSummary: ResolverTypeWrapper&lt;BookmarkSummary&gt;;
+  Boolean: ResolverTypeWrapper&lt;Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;]&gt;;
+  Career: ResolverTypeWrapper&lt;Career&gt;;
+  CareerPath: ResolverTypeWrapper&lt;CareerPath&gt;;
+  CareerPathPagedList: ResolverTypeWrapper&lt;CareerPathPagedList&gt;;
+  CareerPathSummary: ResolverTypeWrapper&lt;CareerPathSummary&gt;;
+  CareerSummary: ResolverTypeWrapper&lt;CareerSummary&gt;;
+  CareersPagedList: ResolverTypeWrapper&lt;CareersPagedList&gt;;
+  Connection: ResolverTypeWrapper&lt;Connection&gt;;
+  ConnectionPagedList: ResolverTypeWrapper&lt;ConnectionPagedList&gt;;
+  ConnectionStatus: ConnectionStatus;
+  ConnectionSummary: ResolverTypeWrapper&lt;ConnectionSummary&gt;;
+  ConnectionType: ConnectionType;
+  CreateBlockInput: CreateBlockInput;
+  CreateCareerInput: CreateCareerInput;
+  CreateCareerPathInput: CreateCareerPathInput;
+  CreateConnectionInput: CreateConnectionInput;
+  DeleteConnectionInput: DeleteConnectionInput;
+  Education: ResolverTypeWrapper&lt;Education&gt;;
+  EducationPagedList: ResolverTypeWrapper&lt;EducationPagedList&gt;;
+  EducationSummary: ResolverTypeWrapper&lt;EducationSummary&gt;;
+  Feed: ResolverTypeWrapper&lt;Feed&gt;;
+  FeedPagedList: ResolverTypeWrapper&lt;FeedPagedList&gt;;
+  FeedSummary: ResolverTypeWrapper&lt;FeedSummary&gt;;
+  Future: ResolverTypeWrapper&lt;Future&gt;;
+  FuturePagedList: ResolverTypeWrapper&lt;FuturePagedList&gt;;
+  FutureSummary: ResolverTypeWrapper&lt;FutureSummary&gt;;
+  Guidance: ResolverTypeWrapper&lt;Guidance&gt;;
+  GuidanceInput: GuidanceInput;
+  GuidancePagedList: ResolverTypeWrapper&lt;GuidancePagedList&gt;;
+  GuidanceSummary: ResolverTypeWrapper&lt;GuidanceSummary&gt;;
+  ID: ResolverTypeWrapper&lt;Scalars[&#x27;ID&#x27;][&#x27;output&#x27;]&gt;;
+  Industry: ResolverTypeWrapper&lt;Industry&gt;;
+  IndustryInput: IndustryInput;
+  IndustryPagedList: ResolverTypeWrapper&lt;IndustryPagedList&gt;;
+  IndustrySummary: ResolverTypeWrapper&lt;IndustrySummary&gt;;
+  Int: ResolverTypeWrapper&lt;Scalars[&#x27;Int&#x27;][&#x27;output&#x27;]&gt;;
+  Me: ResolverTypeWrapper&lt;Me&gt;;
+  MediaUploadResponse: ResolverTypeWrapper&lt;MediaUploadResponse&gt;;
+  MeetFrequency: ResolverTypeWrapper&lt;MeetFrequency&gt;;
+  MeetFrequencyPagedList: ResolverTypeWrapper&lt;MeetFrequencyPagedList&gt;;
+  MeetFrequencySummary: ResolverTypeWrapper&lt;MeetFrequencySummary&gt;;
+  Mentee: ResolverTypeWrapper&lt;Mentee&gt;;
+  MenteePagedList: ResolverTypeWrapper&lt;MenteePagedList&gt;;
+  MenteeStatus: MenteeStatus;
+  MenteeSummary: ResolverTypeWrapper&lt;MenteeSummary&gt;;
+  Mentor: ResolverTypeWrapper&lt;Mentor&gt;;
+  MentorPagedList: ResolverTypeWrapper&lt;MentorPagedList&gt;;
+  MentorStatus: MentorStatus;
+  MentorSummary: ResolverTypeWrapper&lt;MentorSummary&gt;;
+  Mutation: ResolverTypeWrapper&lt;{}&gt;;
+  Post: ResolverTypeWrapper&lt;Post&gt;;
+  PostPagedList: ResolverTypeWrapper&lt;PostPagedList&gt;;
+  PostS3Signed: ResolverTypeWrapper&lt;PostS3Signed&gt;;
+  PostStatus: PostStatus;
+  PostSummary: ResolverTypeWrapper&lt;PostSummary&gt;;
+  PostType: PostType;
+  Query: ResolverTypeWrapper&lt;{}&gt;;
+  Question: ResolverTypeWrapper&lt;Question&gt;;
+  QuestionPagedList: ResolverTypeWrapper&lt;QuestionPagedList&gt;;
+  QuestionStatus: QuestionStatus;
+  QuestionSummary: ResolverTypeWrapper&lt;QuestionSummary&gt;;
+  Report: ResolverTypeWrapper&lt;Report&gt;;
+  ReportInput: ReportInput;
+  ReportPagedList: ResolverTypeWrapper&lt;ReportPagedList&gt;;
+  ReportStatus: ReportStatus;
+  ReportType: ReportType;
+  String: ResolverTypeWrapper&lt;Scalars[&#x27;String&#x27;][&#x27;output&#x27;]&gt;;
+  UpdateCareerInput: UpdateCareerInput;
+  UpdateCareerOrderInput: UpdateCareerOrderInput;
+  UpdateCareerPathInput: UpdateCareerPathInput;
+  UpdateCareerPathOrderInput: UpdateCareerPathOrderInput;
+  UpdateConnectionTypeInput: UpdateConnectionTypeInput;
+  User: ResolverTypeWrapper&lt;User&gt;;
+  UserProfileImageUploadInput: UserProfileImageUploadInput;
+  UserSummary: ResolverTypeWrapper&lt;UserSummary&gt;;
+  UsersPagedList: ResolverTypeWrapper&lt;UsersPagedList&gt;;
+  ViewPost: ResolverTypeWrapper&lt;ViewPost&gt;;
+  ViewPostPagedList: ResolverTypeWrapper&lt;ViewPostPagedList&gt;;
+  ViewPostSummary: ResolverTypeWrapper&lt;ViewPostSummary&gt;;
+  createMenteeInput: CreateMenteeInput;
+  createMentorInput: CreateMentorInput;
+  createPostS3SignedUrlInput: CreatePostS3SignedUrlInput;
+  createQuestionInput: CreateQuestionInput;
+  postInput: PostInput;
+  updateMenteeSurveyInput: UpdateMenteeSurveyInput;
+  updatePersonalDetailsInput: UpdatePersonalDetailsInput;
+  updateProfessionalInput: UpdateProfessionalInput;
+  updateQuestionInput: UpdateQuestionInput;
+  updateReportInput: UpdateReportInput;
+}&gt;;
+
+/** Mapping between all available schema types and the resolvers parents */
+export type ResolversParentTypes &#x3D; ResolversObject&lt;{
+  AWSDate: Scalars[&#x27;AWSDate&#x27;][&#x27;output&#x27;];
+  AWSDateTime: Scalars[&#x27;AWSDateTime&#x27;][&#x27;output&#x27;];
+  AWSEmail: Scalars[&#x27;AWSEmail&#x27;][&#x27;output&#x27;];
+  AWSIPAddress: Scalars[&#x27;AWSIPAddress&#x27;][&#x27;output&#x27;];
+  AWSJSON: Scalars[&#x27;AWSJSON&#x27;][&#x27;output&#x27;];
+  AWSPhone: Scalars[&#x27;AWSPhone&#x27;][&#x27;output&#x27;];
+  AWSTime: Scalars[&#x27;AWSTime&#x27;][&#x27;output&#x27;];
+  AWSTimestamp: Scalars[&#x27;AWSTimestamp&#x27;][&#x27;output&#x27;];
+  AWSURL: Scalars[&#x27;AWSURL&#x27;][&#x27;output&#x27;];
+  Block: Block;
+  BlockPagedList: BlockPagedList;
+  Bookmark: Bookmark;
+  BookmarkPagedList: BookmarkPagedList;
+  BookmarkSummary: BookmarkSummary;
+  Boolean: Scalars[&#x27;Boolean&#x27;][&#x27;output&#x27;];
+  Career: Career;
+  CareerPath: CareerPath;
+  CareerPathPagedList: CareerPathPagedList;
+  CareerPathSummary: CareerPathSummary;
+  CareerSummary: CareerSummary;
+  CareersPagedList: CareersPagedList;
+  Connection: Connection;
+  ConnectionPagedList: ConnectionPagedList;
+  ConnectionSummary: ConnectionSummary;
+  CreateBlockInput: CreateBlockInput;
+  CreateCareerInput: CreateCareerInput;
+  CreateCareerPathInput: CreateCareerPathInput;
+  CreateConnectionInput: CreateConnectionInput;
+  DeleteConnectionInput: DeleteConnectionInput;
+  Education: Education;
+  EducationPagedList: EducationPagedList;
+  EducationSummary: EducationSummary;
+  Feed: Feed;
+  FeedPagedList: FeedPagedList;
+  FeedSummary: FeedSummary;
+  Future: Future;
+  FuturePagedList: FuturePagedList;
+  FutureSummary: FutureSummary;
+  Guidance: Guidance;
+  GuidanceInput: GuidanceInput;
+  GuidancePagedList: GuidancePagedList;
+  GuidanceSummary: GuidanceSummary;
+  ID: Scalars[&#x27;ID&#x27;][&#x27;output&#x27;];
+  Industry: Industry;
+  IndustryInput: IndustryInput;
+  IndustryPagedList: IndustryPagedList;
+  IndustrySummary: IndustrySummary;
+  Int: Scalars[&#x27;Int&#x27;][&#x27;output&#x27;];
+  Me: Me;
+  MediaUploadResponse: MediaUploadResponse;
+  MeetFrequency: MeetFrequency;
+  MeetFrequencyPagedList: MeetFrequencyPagedList;
+  MeetFrequencySummary: MeetFrequencySummary;
+  Mentee: Mentee;
+  MenteePagedList: MenteePagedList;
+  MenteeSummary: MenteeSummary;
+  Mentor: Mentor;
+  MentorPagedList: MentorPagedList;
+  MentorSummary: MentorSummary;
+  Mutation: {};
+  Post: Post;
+  PostPagedList: PostPagedList;
+  PostS3Signed: PostS3Signed;
+  PostSummary: PostSummary;
+  Query: {};
+  Question: Question;
+  QuestionPagedList: QuestionPagedList;
+  QuestionSummary: QuestionSummary;
+  Report: Report;
+  ReportInput: ReportInput;
+  ReportPagedList: ReportPagedList;
+  String: Scalars[&#x27;String&#x27;][&#x27;output&#x27;];
+  UpdateCareerInput: UpdateCareerInput;
+  UpdateCareerOrderInput: UpdateCareerOrderInput;
+  UpdateCareerPathInput: UpdateCareerPathInput;
+  UpdateCareerPathOrderInput: UpdateCareerPathOrderInput;
+  UpdateConnectionTypeInput: UpdateConnectionTypeInput;
+  User: User;
+  UserProfileImageUploadInput: UserProfileImageUploadInput;
+  UserSummary: UserSummary;
+  UsersPagedList: UsersPagedList;
+  ViewPost: ViewPost;
+  ViewPostPagedList: ViewPostPagedList;
+  ViewPostSummary: ViewPostSummary;
+  createMenteeInput: CreateMenteeInput;
+  createMentorInput: CreateMentorInput;
+  createPostS3SignedUrlInput: CreatePostS3SignedUrlInput;
+  createQuestionInput: CreateQuestionInput;
+  postInput: PostInput;
+  updateMenteeSurveyInput: UpdateMenteeSurveyInput;
+  updatePersonalDetailsInput: UpdatePersonalDetailsInput;
+  updateProfessionalInput: UpdateProfessionalInput;
+  updateQuestionInput: UpdateQuestionInput;
+  updateReportInput: UpdateReportInput;
+}&gt;;
+
+export interface AwsDateScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSDate&#x27;], any&gt; {
+  name: &#x27;AWSDate&#x27;;
+}
+
+export interface AwsDateTimeScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], any&gt; {
+  name: &#x27;AWSDateTime&#x27;;
+}
+
+export interface AwsEmailScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSEmail&#x27;], any&gt; {
+  name: &#x27;AWSEmail&#x27;;
+}
+
+export interface AwsipAddressScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSIPAddress&#x27;], any&gt; {
+  name: &#x27;AWSIPAddress&#x27;;
+}
+
+export interface AwsjsonScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSJSON&#x27;], any&gt; {
+  name: &#x27;AWSJSON&#x27;;
+}
+
+export interface AwsPhoneScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSPhone&#x27;], any&gt; {
+  name: &#x27;AWSPhone&#x27;;
+}
+
+export interface AwsTimeScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSTime&#x27;], any&gt; {
+  name: &#x27;AWSTime&#x27;;
+}
+
+export interface AwsTimestampScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSTimestamp&#x27;], any&gt; {
+  name: &#x27;AWSTimestamp&#x27;;
+}
+
+export interface AwsurlScalarConfig extends GraphQLScalarTypeConfig&lt;ResolversTypes[&#x27;AWSURL&#x27;], any&gt; {
+  name: &#x27;AWSURL&#x27;;
+}
+
+export type BlockResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Block&#x27;] &#x3D; ResolversParentTypes[&#x27;Block&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  blockedUserId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  blockedUserName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  title?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  type?: Resolver&lt;ResolversTypes[&#x27;BlockType&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type BlockPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;BlockPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;BlockPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;Block&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type BookmarkResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Bookmark&#x27;] &#x3D; ResolversParentTypes[&#x27;Bookmark&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  post?: Resolver&lt;ResolversTypes[&#x27;Post&#x27;], ParentType, ContextType&gt;;
+  postCreatedAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  postId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postTitle?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  user?: Resolver&lt;ResolversTypes[&#x27;User&#x27;], ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type BookmarkPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;BookmarkPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;BookmarkPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;BookmarkSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type BookmarkSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;BookmarkSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;BookmarkSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  postCreatedAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  postId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postTitle?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type CareerResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Career&#x27;] &#x3D; ResolversParentTypes[&#x27;Career&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  careerPath?: Resolver&lt;ResolversTypes[&#x27;CareerPath&#x27;], ParentType, ContextType&gt;;
+  careerPathId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  description?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  imageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  intro?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  order?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  salary?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type CareerPathResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;CareerPath&#x27;] &#x3D; ResolversParentTypes[&#x27;CareerPath&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  careers?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;CareersPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;CareerPathCareersArgs&gt;&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  description?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  imageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  intro?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  order?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type CareerPathPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;CareerPathPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;CareerPathPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;CareerPathSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type CareerPathSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;CareerPathSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;CareerPathSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  careers?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;CareersPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;CareerPathSummaryCareersArgs&gt;&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  description?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  imageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  intro?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  order?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type CareerSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;CareerSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;CareerSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  description?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  imageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  intro?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  order?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  salary?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type CareersPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;CareersPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;CareersPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;CareerSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ConnectionResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Connection&#x27;] &#x3D; ResolversParentTypes[&#x27;Connection&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  menteeId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  menteeName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  menteeProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorIsExpert?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorIsGuide?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;ConnectionStatus&#x27;], ParentType, ContextType&gt;;
+  type?: Resolver&lt;ResolversTypes[&#x27;ConnectionType&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ConnectionPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;ConnectionPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;ConnectionPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;ConnectionSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ConnectionSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;ConnectionSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;ConnectionSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  menteeId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  menteeName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  menteeProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorIsExpert?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorIsGuide?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;ConnectionStatus&#x27;], ParentType, ContextType&gt;;
+  type?: Resolver&lt;ResolversTypes[&#x27;ConnectionType&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type EducationResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Education&#x27;] &#x3D; ResolversParentTypes[&#x27;Education&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type EducationPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;EducationPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;EducationPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;EducationSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type EducationSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;EducationSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;EducationSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type FeedResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Feed&#x27;] &#x3D; ResolversParentTypes[&#x27;Feed&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  post?: Resolver&lt;ResolversTypes[&#x27;Post&#x27;], ParentType, ContextType&gt;;
+  postCreatedAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  postId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postTitle?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  user?: Resolver&lt;ResolversTypes[&#x27;User&#x27;], ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type FeedPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;FeedPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;FeedPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;FeedSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type FeedSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;FeedSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;FeedSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  postCreatedAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  postId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postMentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postTitle?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type FutureResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Future&#x27;] &#x3D; ResolversParentTypes[&#x27;Future&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type FuturePagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;FuturePagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;FuturePagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;FutureSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type FutureSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;FutureSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;FutureSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type GuidanceResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Guidance&#x27;] &#x3D; ResolversParentTypes[&#x27;Guidance&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type GuidancePagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;GuidancePagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;GuidancePagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;GuidanceSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type GuidanceSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;GuidanceSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;GuidanceSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type IndustryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Industry&#x27;] &#x3D; ResolversParentTypes[&#x27;Industry&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type IndustryPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;IndustryPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;IndustryPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;IndustrySummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type IndustrySummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;IndustrySummary&#x27;] &#x3D; ResolversParentTypes[&#x27;IndustrySummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MeResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Me&#x27;] &#x3D; ResolversParentTypes[&#x27;Me&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  algoliaApiKey?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  blocks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BlockPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MeBlocksArgs&gt;&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  dob?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  email?: Resolver&lt;ResolversTypes[&#x27;AWSEmail&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  feed?: Resolver&lt;ResolversTypes[&#x27;FeedPagedList&#x27;], ParentType, ContextType, Partial&lt;MeFeedArgs&gt;&gt;;
+  firstName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  gender?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  isSystemAdministrator?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  lastName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  location?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentee?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Mentee&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentor?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Mentor&#x27;]&gt;, ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  profilePicS3SignedUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;MediaUploadResponse&#x27;]&gt;, ParentType, ContextType&gt;;
+  reports?: Resolver&lt;ResolversTypes[&#x27;ReportPagedList&#x27;], ParentType, ContextType, Partial&lt;MeReportsArgs&gt;&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  zipCode?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MediaUploadResponseResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MediaUploadResponse&#x27;] &#x3D; ResolversParentTypes[&#x27;MediaUploadResponse&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  mediaId?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mediaUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  s3PutObjectUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MeetFrequencyResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MeetFrequency&#x27;] &#x3D; ResolversParentTypes[&#x27;MeetFrequency&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  sequenceNo?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MeetFrequencyPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MeetFrequencyPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;MeetFrequencyPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;MeetFrequencySummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MeetFrequencySummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MeetFrequencySummary&#x27;] &#x3D; ResolversParentTypes[&#x27;MeetFrequencySummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  expertWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  guideWeight?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  sequenceNo?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MenteeResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Mentee&#x27;] &#x3D; ResolversParentTypes[&#x27;Mentee&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  blocks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BlockPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MenteeBlocksArgs&gt;&gt;;
+  bookmarks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BookmarkPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MenteeBookmarksArgs&gt;&gt;;
+  checkAvailableBookmarks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BookmarkPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MenteeCheckAvailableBookmarksArgs&gt;&gt;;
+  connections?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ConnectionPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MenteeConnectionsArgs&gt;&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  education?: Resolver&lt;ResolversTypes[&#x27;EducationSummary&#x27;], ParentType, ContextType&gt;;
+  educationId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  future?: Resolver&lt;ResolversTypes[&#x27;FutureSummary&#x27;], ParentType, ContextType&gt;;
+  futureId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  guidances?: Resolver&lt;Array&lt;ResolversTypes[&#x27;GuidanceSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  meetFrequency?: Resolver&lt;ResolversTypes[&#x27;MeetFrequencySummary&#x27;], ParentType, ContextType&gt;;
+  meetFrequencyId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  noOfBookmarks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfQuestions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfFollowings?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfMentorships?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  postViews?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ViewPostPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MenteePostViewsArgs&gt;&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;QuestionPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MenteeQuestionsArgs&gt;&gt;;
+  reports?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ReportPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MenteeReportsArgs&gt;&gt;;
+  seekingExpert?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  seekingGuide?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;MenteeStatus&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MenteePagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MenteePagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;MenteePagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;MenteeSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MenteeSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MenteeSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;MenteeSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  education?: Resolver&lt;ResolversTypes[&#x27;EducationSummary&#x27;], ParentType, ContextType&gt;;
+  educationId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  future?: Resolver&lt;ResolversTypes[&#x27;FutureSummary&#x27;], ParentType, ContextType&gt;;
+  futureId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  meetFrequency?: Resolver&lt;ResolversTypes[&#x27;MeetFrequencySummary&#x27;], ParentType, ContextType&gt;;
+  meetFrequencyId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  noOfBookmarks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfQuestions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfFollowings?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfMentorships?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  seekingExpert?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  seekingGuide?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;MenteeStatus&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MentorResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Mentor&#x27;] &#x3D; ResolversParentTypes[&#x27;Mentor&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  availability?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  bio?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  blocks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BlockPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MentorBlocksArgs&gt;&gt;;
+  connections?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ConnectionPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MentorConnectionsArgs&gt;&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  education?: Resolver&lt;ResolversTypes[&#x27;EducationSummary&#x27;], ParentType, ContextType&gt;;
+  educationId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  guidances?: Resolver&lt;Array&lt;ResolversTypes[&#x27;GuidanceSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  industries?: Resolver&lt;Array&lt;ResolversTypes[&#x27;IndustrySummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  introductionPosts?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;PostPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MentorIntroductionPostsArgs&gt;&gt;;
+  isExpert?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  isGuide?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  jobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  linkedInProfile?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  meetFrequency?: Resolver&lt;ResolversTypes[&#x27;MeetFrequencySummary&#x27;], ParentType, ContextType&gt;;
+  meetFrequencyId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  mentoringCapacity?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  noOfActiveVideos?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfPosts?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfQuestions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfUnreadQuestions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfFollowers?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfMentorships?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  posts?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;PostPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MentorPostsArgs&gt;&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;QuestionPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MentorQuestionsArgs&gt;&gt;;
+  reports?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ReportPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;MentorReportsArgs&gt;&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;MentorStatus&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MentorPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MentorPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;MentorPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;MentorSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MentorSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;MentorSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;MentorSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  availability?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  bio?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  education?: Resolver&lt;ResolversTypes[&#x27;EducationSummary&#x27;], ParentType, ContextType&gt;;
+  educationId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  isExpert?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  isGuide?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  jobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  linkedInProfile?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  meetFrequency?: Resolver&lt;ResolversTypes[&#x27;MeetFrequencySummary&#x27;], ParentType, ContextType&gt;;
+  meetFrequencyId?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  mentoringCapacity?: Resolver&lt;ResolversTypes[&#x27;Int&#x27;], ParentType, ContextType&gt;;
+  name?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  noOfActiveVideos?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfPosts?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfQuestions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  noOfUnreadQuestions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfFollowers?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfMentorships?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;MentorStatus&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type MutationResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Mutation&#x27;] &#x3D; ResolversParentTypes[&#x27;Mutation&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createBlock?: Resolver&lt;ResolversTypes[&#x27;Block&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateBlockArgs, &#x27;input&#x27;&gt;&gt;;
+  createCareer?: Resolver&lt;ResolversTypes[&#x27;Career&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateCareerArgs, &#x27;input&#x27;&gt;&gt;;
+  createCareerPath?: Resolver&lt;ResolversTypes[&#x27;CareerPath&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateCareerPathArgs, &#x27;input&#x27;&gt;&gt;;
+  createConnection?: Resolver&lt;ResolversTypes[&#x27;Connection&#x27;], ParentType, ContextType, Partial&lt;MutationCreateConnectionArgs&gt;&gt;;
+  createMentee?: Resolver&lt;ResolversTypes[&#x27;Mentee&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateMenteeArgs, &#x27;input&#x27;&gt;&gt;;
+  createMentor?: Resolver&lt;ResolversTypes[&#x27;Mentor&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateMentorArgs, &#x27;input&#x27;&gt;&gt;;
+  createPostS3SignedUrl?: Resolver&lt;ResolversTypes[&#x27;PostS3Signed&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreatePostS3SignedUrlArgs, &#x27;input&#x27;&gt;&gt;;
+  createQuestion?: Resolver&lt;ResolversTypes[&#x27;Question&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateQuestionArgs, &#x27;input&#x27;&gt;&gt;;
+  createReport?: Resolver&lt;ResolversTypes[&#x27;Report&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateReportArgs, &#x27;input&#x27;&gt;&gt;;
+  createViewPost?: Resolver&lt;ResolversTypes[&#x27;ViewPost&#x27;], ParentType, ContextType, RequireFields&lt;MutationCreateViewPostArgs, &#x27;id&#x27;&gt;&gt;;
+  deleteAccount?: Resolver&lt;ResolversTypes[&#x27;UserSummary&#x27;], ParentType, ContextType&gt;;
+  deleteBlock?: Resolver&lt;ResolversTypes[&#x27;Block&#x27;], ParentType, ContextType, RequireFields&lt;MutationDeleteBlockArgs, &#x27;id&#x27;&gt;&gt;;
+  deleteCareer?: Resolver&lt;ResolversTypes[&#x27;Career&#x27;], ParentType, ContextType, RequireFields&lt;MutationDeleteCareerArgs, &#x27;id&#x27;&gt;&gt;;
+  deleteCareerPath?: Resolver&lt;ResolversTypes[&#x27;CareerPath&#x27;], ParentType, ContextType, RequireFields&lt;MutationDeleteCareerPathArgs, &#x27;id&#x27;&gt;&gt;;
+  deleteConnection?: Resolver&lt;ResolversTypes[&#x27;Connection&#x27;], ParentType, ContextType, Partial&lt;MutationDeleteConnectionArgs&gt;&gt;;
+  deletePost?: Resolver&lt;ResolversTypes[&#x27;Post&#x27;], ParentType, ContextType, RequireFields&lt;MutationDeletePostArgs, &#x27;id&#x27;&gt;&gt;;
+  deleteQuestion?: Resolver&lt;ResolversTypes[&#x27;Question&#x27;], ParentType, ContextType, RequireFields&lt;MutationDeleteQuestionArgs, &#x27;id&#x27;&gt;&gt;;
+  deleteQuestionResponse?: Resolver&lt;ResolversTypes[&#x27;Question&#x27;], ParentType, ContextType, RequireFields&lt;MutationDeleteQuestionResponseArgs, &#x27;id&#x27;&gt;&gt;;
+  deleteReport?: Resolver&lt;ResolversTypes[&#x27;Report&#x27;], ParentType, ContextType, RequireFields&lt;MutationDeleteReportArgs, &#x27;id&#x27;&gt;&gt;;
+  readQuestion?: Resolver&lt;ResolversTypes[&#x27;Question&#x27;], ParentType, ContextType, RequireFields&lt;MutationReadQuestionArgs, &#x27;id&#x27;&gt;&gt;;
+  toggleBookmark?: Resolver&lt;ResolversTypes[&#x27;Bookmark&#x27;], ParentType, ContextType, RequireFields&lt;MutationToggleBookmarkArgs, &#x27;postId&#x27;&gt;&gt;;
+  togglePostFeatured?: Resolver&lt;ResolversTypes[&#x27;Post&#x27;], ParentType, ContextType, RequireFields&lt;MutationTogglePostFeaturedArgs, &#x27;id&#x27;&gt;&gt;;
+  updateCareer?: Resolver&lt;ResolversTypes[&#x27;Career&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateCareerArgs, &#x27;input&#x27;&gt;&gt;;
+  updateCareerOrder?: Resolver&lt;ResolversTypes[&#x27;Career&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateCareerOrderArgs, &#x27;input&#x27;&gt;&gt;;
+  updateCareerPath?: Resolver&lt;ResolversTypes[&#x27;CareerPath&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateCareerPathArgs, &#x27;input&#x27;&gt;&gt;;
+  updateCareerPathOrder?: Resolver&lt;ResolversTypes[&#x27;CareerPath&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateCareerPathOrderArgs, &#x27;input&#x27;&gt;&gt;;
+  updateConnectionTypeById?: Resolver&lt;ResolversTypes[&#x27;Connection&#x27;], ParentType, ContextType, Partial&lt;MutationUpdateConnectionTypeByIdArgs&gt;&gt;;
+  updateMenteeSurvey?: Resolver&lt;ResolversTypes[&#x27;Mentee&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateMenteeSurveyArgs, &#x27;input&#x27;&gt;&gt;;
+  updateMentorStatus?: Resolver&lt;ResolversTypes[&#x27;Mentor&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateMentorStatusArgs, &#x27;id&#x27; | &#x27;status&#x27;&gt;&gt;;
+  updatePersonalDetails?: Resolver&lt;ResolversTypes[&#x27;Me&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdatePersonalDetailsArgs, &#x27;input&#x27;&gt;&gt;;
+  updatePostStatus?: Resolver&lt;ResolversTypes[&#x27;Post&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdatePostStatusArgs, &#x27;id&#x27; | &#x27;status&#x27;&gt;&gt;;
+  updateProfessionalDetails?: Resolver&lt;ResolversTypes[&#x27;Mentor&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateProfessionalDetailsArgs, &#x27;input&#x27;&gt;&gt;;
+  updateQuestion?: Resolver&lt;ResolversTypes[&#x27;Question&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateQuestionArgs, &#x27;input&#x27;&gt;&gt;;
+  updateReport?: Resolver&lt;ResolversTypes[&#x27;Report&#x27;], ParentType, ContextType, RequireFields&lt;MutationUpdateReportArgs, &#x27;input&#x27;&gt;&gt;;
+}&gt;;
+
+export type PostResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Post&#x27;] &#x3D; ResolversParentTypes[&#x27;Post&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  bookmarks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BookmarkPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;PostBookmarksArgs&gt;&gt;;
+  connectionWithMe?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ConnectionPagedList&#x27;]&gt;, ParentType, ContextType&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  description?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  featuredAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  guidances?: Resolver&lt;Array&lt;ResolversTypes[&#x27;GuidanceSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  imageUrl?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  industries?: Resolver&lt;Array&lt;ResolversTypes[&#x27;IndustrySummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  isFeatured?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentor?: Resolver&lt;ResolversTypes[&#x27;Mentor&#x27;], ParentType, ContextType&gt;;
+  mentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorName?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfViews?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  question?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Question&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionBody?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionId?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionMenteeId?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionMenteeName?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  reports?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ReportPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;PostReportsArgs&gt;&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;PostStatus&#x27;], ParentType, ContextType&gt;;
+  title?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  type?: Resolver&lt;ResolversTypes[&#x27;PostType&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  videoDuration?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  videoKey?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  videoSignedUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  views?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ViewPostPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;PostViewsArgs&gt;&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type PostPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;PostPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;PostPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;PostSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type PostS3SignedResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;PostS3Signed&#x27;] &#x3D; ResolversParentTypes[&#x27;PostS3Signed&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  mediaId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mediaUrl?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  s3PutObjectUrl?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type PostSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;PostSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;PostSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  description?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  featuredAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  guidances?: Resolver&lt;Array&lt;ResolversTypes[&#x27;GuidanceSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  imageUrl?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  industries?: Resolver&lt;Array&lt;ResolversTypes[&#x27;IndustrySummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  isFeatured?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorJobTitle?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorName?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  numberOfViews?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Int&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionBody?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionId?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionMenteeId?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  questionMenteeName?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;PostStatus&#x27;], ParentType, ContextType&gt;;
+  title?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  type?: Resolver&lt;ResolversTypes[&#x27;PostType&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  videoDuration?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type QueryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Query&#x27;] &#x3D; ResolversParentTypes[&#x27;Query&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  getBlockById?: Resolver&lt;ResolversTypes[&#x27;Block&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetBlockByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getCareerById?: Resolver&lt;ResolversTypes[&#x27;Career&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetCareerByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getCareerPathById?: Resolver&lt;ResolversTypes[&#x27;CareerPath&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetCareerPathByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getMe?: Resolver&lt;ResolversTypes[&#x27;Me&#x27;], ParentType, ContextType&gt;;
+  getMenteeById?: Resolver&lt;ResolversTypes[&#x27;Mentee&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetMenteeByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getMentorById?: Resolver&lt;ResolversTypes[&#x27;Mentor&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetMentorByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getPostById?: Resolver&lt;ResolversTypes[&#x27;Post&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetPostByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getQuestionById?: Resolver&lt;ResolversTypes[&#x27;Question&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetQuestionByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getReportById?: Resolver&lt;ResolversTypes[&#x27;Report&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetReportByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getUserByEmail?: Resolver&lt;ResolversTypes[&#x27;User&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetUserByEmailArgs, &#x27;email&#x27;&gt;&gt;;
+  getUserById?: Resolver&lt;ResolversTypes[&#x27;User&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetUserByIdArgs, &#x27;id&#x27;&gt;&gt;;
+  getUserByUserName?: Resolver&lt;ResolversTypes[&#x27;User&#x27;], ParentType, ContextType, RequireFields&lt;QueryGetUserByUserNameArgs, &#x27;userName&#x27;&gt;&gt;;
+  latestPosts?: Resolver&lt;ResolversTypes[&#x27;PostPagedList&#x27;], ParentType, ContextType, Partial&lt;QueryLatestPostsArgs&gt;&gt;;
+  listBlocks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BlockPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;QueryListBlocksArgs&gt;&gt;;
+  listCareerPaths?: Resolver&lt;ResolversTypes[&#x27;CareerPathPagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListCareerPathsArgs&gt;&gt;;
+  listEducation?: Resolver&lt;ResolversTypes[&#x27;EducationPagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListEducationArgs&gt;&gt;;
+  listFutures?: Resolver&lt;ResolversTypes[&#x27;FuturePagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListFuturesArgs&gt;&gt;;
+  listGuidances?: Resolver&lt;ResolversTypes[&#x27;GuidancePagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListGuidancesArgs&gt;&gt;;
+  listIndustries?: Resolver&lt;ResolversTypes[&#x27;IndustryPagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListIndustriesArgs&gt;&gt;;
+  listMeetFrequencies?: Resolver&lt;ResolversTypes[&#x27;MeetFrequencyPagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListMeetFrequenciesArgs&gt;&gt;;
+  listMentees?: Resolver&lt;ResolversTypes[&#x27;MenteePagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListMenteesArgs&gt;&gt;;
+  listMentors?: Resolver&lt;ResolversTypes[&#x27;MentorPagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListMentorsArgs&gt;&gt;;
+  listPosts?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;PostPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;QueryListPostsArgs&gt;&gt;;
+  listQuestions?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;QuestionPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;QueryListQuestionsArgs&gt;&gt;;
+  listReports?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ReportPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;QueryListReportsArgs&gt;&gt;;
+  listUsers?: Resolver&lt;ResolversTypes[&#x27;UsersPagedList&#x27;], ParentType, ContextType, Partial&lt;QueryListUsersArgs&gt;&gt;;
+}&gt;;
+
+export type QuestionResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Question&#x27;] &#x3D; ResolversParentTypes[&#x27;Question&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  active?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  additionalDetails?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  menteeId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  menteeName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  question?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  reportedByMe?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Report&#x27;]&gt;, ParentType, ContextType&gt;;
+  reports?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ReportPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;QuestionReportsArgs&gt;&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;QuestionStatus&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type QuestionPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;QuestionPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;QuestionPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;QuestionSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type QuestionSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;QuestionSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;QuestionSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  active?: Resolver&lt;ResolversTypes[&#x27;Boolean&#x27;], ParentType, ContextType&gt;;
+  additionalDetails?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  menteeId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  menteeName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  mentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  question?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;QuestionStatus&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ReportResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;Report&#x27;] &#x3D; ResolversParentTypes[&#x27;Report&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  entityId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  notes?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  reason?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  status?: Resolver&lt;ResolversTypes[&#x27;ReportStatus&#x27;], ParentType, ContextType&gt;;
+  title?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  type?: Resolver&lt;ResolversTypes[&#x27;ReportType&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ReportPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;ReportPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;ReportPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;Report&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type UserResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;User&#x27;] &#x3D; ResolversParentTypes[&#x27;User&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  blocks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BlockPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;UserBlocksArgs&gt;&gt;;
+  bookmarks?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;BookmarkPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;UserBookmarksArgs&gt;&gt;;
+  cognitoSubs?: Resolver&lt;Array&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  dob?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  email?: Resolver&lt;ResolversTypes[&#x27;AWSEmail&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  feed?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;FeedPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;UserFeedArgs&gt;&gt;;
+  firstName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  gender?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  isSystemAdministrator?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  lastName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  location?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentee?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Mentee&#x27;]&gt;, ParentType, ContextType&gt;;
+  mentor?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Mentor&#x27;]&gt;, ParentType, ContextType&gt;;
+  postViews?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ViewPostPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;UserPostViewsArgs&gt;&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  reports?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;ReportPagedList&#x27;]&gt;, ParentType, ContextType, Partial&lt;UserReportsArgs&gt;&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  zipCode?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type UserSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;UserSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;UserSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  dob?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  email?: Resolver&lt;ResolversTypes[&#x27;AWSEmail&#x27;], ParentType, ContextType&gt;;
+  entity?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  firstName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  gender?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  isSystemAdministrator?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;Boolean&#x27;]&gt;, ParentType, ContextType&gt;;
+  lastName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  location?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  zipCode?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type UsersPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;UsersPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;UsersPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;UserSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ViewPostResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;ViewPost&#x27;] &#x3D; ResolversParentTypes[&#x27;ViewPost&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  post?: Resolver&lt;ResolversTypes[&#x27;Post&#x27;], ParentType, ContextType&gt;;
+  postCreatedAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  postId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postTitle?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  profileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  user?: Resolver&lt;ResolversTypes[&#x27;User&#x27;], ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ViewPostPagedListResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;ViewPostPagedList&#x27;] &#x3D; ResolversParentTypes[&#x27;ViewPostPagedList&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  items?: Resolver&lt;Array&lt;ResolversTypes[&#x27;ViewPostSummary&#x27;]&gt;, ParentType, ContextType&gt;;
+  nextToken?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type ViewPostSummaryResolvers&lt;ContextType &#x3D; any, ParentType extends ResolversParentTypes[&#x27;ViewPostSummary&#x27;] &#x3D; ResolversParentTypes[&#x27;ViewPostSummary&#x27;]&gt; &#x3D; ResolversObject&lt;{
+  createdAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  id?: Resolver&lt;ResolversTypes[&#x27;ID&#x27;], ParentType, ContextType&gt;;
+  postCreatedAt?: Resolver&lt;ResolversTypes[&#x27;AWSDateTime&#x27;], ParentType, ContextType&gt;;
+  postId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  postMentorProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  postTitle?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  updatedAt?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;AWSDateTime&#x27;]&gt;, ParentType, ContextType&gt;;
+  userId?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userName?: Resolver&lt;ResolversTypes[&#x27;String&#x27;], ParentType, ContextType&gt;;
+  userProfileImageUrl?: Resolver&lt;Maybe&lt;ResolversTypes[&#x27;String&#x27;]&gt;, ParentType, ContextType&gt;;
+  __isTypeOf?: IsTypeOfResolverFn&lt;ParentType, ContextType&gt;;
+}&gt;;
+
+export type Resolvers&lt;ContextType &#x3D; any&gt; &#x3D; ResolversObject&lt;{
+  AWSDate?: GraphQLScalarType;
+  AWSDateTime?: GraphQLScalarType;
+  AWSEmail?: GraphQLScalarType;
+  AWSIPAddress?: GraphQLScalarType;
+  AWSJSON?: GraphQLScalarType;
+  AWSPhone?: GraphQLScalarType;
+  AWSTime?: GraphQLScalarType;
+  AWSTimestamp?: GraphQLScalarType;
+  AWSURL?: GraphQLScalarType;
+  Block?: BlockResolvers&lt;ContextType&gt;;
+  BlockPagedList?: BlockPagedListResolvers&lt;ContextType&gt;;
+  Bookmark?: BookmarkResolvers&lt;ContextType&gt;;
+  BookmarkPagedList?: BookmarkPagedListResolvers&lt;ContextType&gt;;
+  BookmarkSummary?: BookmarkSummaryResolvers&lt;ContextType&gt;;
+  Career?: CareerResolvers&lt;ContextType&gt;;
+  CareerPath?: CareerPathResolvers&lt;ContextType&gt;;
+  CareerPathPagedList?: CareerPathPagedListResolvers&lt;ContextType&gt;;
+  CareerPathSummary?: CareerPathSummaryResolvers&lt;ContextType&gt;;
+  CareerSummary?: CareerSummaryResolvers&lt;ContextType&gt;;
+  CareersPagedList?: CareersPagedListResolvers&lt;ContextType&gt;;
+  Connection?: ConnectionResolvers&lt;ContextType&gt;;
+  ConnectionPagedList?: ConnectionPagedListResolvers&lt;ContextType&gt;;
+  ConnectionSummary?: ConnectionSummaryResolvers&lt;ContextType&gt;;
+  Education?: EducationResolvers&lt;ContextType&gt;;
+  EducationPagedList?: EducationPagedListResolvers&lt;ContextType&gt;;
+  EducationSummary?: EducationSummaryResolvers&lt;ContextType&gt;;
+  Feed?: FeedResolvers&lt;ContextType&gt;;
+  FeedPagedList?: FeedPagedListResolvers&lt;ContextType&gt;;
+  FeedSummary?: FeedSummaryResolvers&lt;ContextType&gt;;
+  Future?: FutureResolvers&lt;ContextType&gt;;
+  FuturePagedList?: FuturePagedListResolvers&lt;ContextType&gt;;
+  FutureSummary?: FutureSummaryResolvers&lt;ContextType&gt;;
+  Guidance?: GuidanceResolvers&lt;ContextType&gt;;
+  GuidancePagedList?: GuidancePagedListResolvers&lt;ContextType&gt;;
+  GuidanceSummary?: GuidanceSummaryResolvers&lt;ContextType&gt;;
+  Industry?: IndustryResolvers&lt;ContextType&gt;;
+  IndustryPagedList?: IndustryPagedListResolvers&lt;ContextType&gt;;
+  IndustrySummary?: IndustrySummaryResolvers&lt;ContextType&gt;;
+  Me?: MeResolvers&lt;ContextType&gt;;
+  MediaUploadResponse?: MediaUploadResponseResolvers&lt;ContextType&gt;;
+  MeetFrequency?: MeetFrequencyResolvers&lt;ContextType&gt;;
+  MeetFrequencyPagedList?: MeetFrequencyPagedListResolvers&lt;ContextType&gt;;
+  MeetFrequencySummary?: MeetFrequencySummaryResolvers&lt;ContextType&gt;;
+  Mentee?: MenteeResolvers&lt;ContextType&gt;;
+  MenteePagedList?: MenteePagedListResolvers&lt;ContextType&gt;;
+  MenteeSummary?: MenteeSummaryResolvers&lt;ContextType&gt;;
+  Mentor?: MentorResolvers&lt;ContextType&gt;;
+  MentorPagedList?: MentorPagedListResolvers&lt;ContextType&gt;;
+  MentorSummary?: MentorSummaryResolvers&lt;ContextType&gt;;
+  Mutation?: MutationResolvers&lt;ContextType&gt;;
+  Post?: PostResolvers&lt;ContextType&gt;;
+  PostPagedList?: PostPagedListResolvers&lt;ContextType&gt;;
+  PostS3Signed?: PostS3SignedResolvers&lt;ContextType&gt;;
+  PostSummary?: PostSummaryResolvers&lt;ContextType&gt;;
+  Query?: QueryResolvers&lt;ContextType&gt;;
+  Question?: QuestionResolvers&lt;ContextType&gt;;
+  QuestionPagedList?: QuestionPagedListResolvers&lt;ContextType&gt;;
+  QuestionSummary?: QuestionSummaryResolvers&lt;ContextType&gt;;
+  Report?: ReportResolvers&lt;ContextType&gt;;
+  ReportPagedList?: ReportPagedListResolvers&lt;ContextType&gt;;
+  User?: UserResolvers&lt;ContextType&gt;;
+  UserSummary?: UserSummaryResolvers&lt;ContextType&gt;;
+  UsersPagedList?: UsersPagedListResolvers&lt;ContextType&gt;;
+  ViewPost?: ViewPostResolvers&lt;ContextType&gt;;
+  ViewPostPagedList?: ViewPostPagedListResolvers&lt;ContextType&gt;;
+  ViewPostSummary?: ViewPostSummaryResolvers&lt;ContextType&gt;;
+}&gt;;
+
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'SubscriptionSubscriberObject.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

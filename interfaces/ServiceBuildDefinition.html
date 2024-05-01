@@ -1,0 +1,1193 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>p3-server documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">p3-server documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  ServiceBuildDefinition</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>services/cicd-server/src/resources/api-pipeline.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Represents a service build definition for the API pipeline.</p>
+
+            </p>
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#buildTimeoutMinutes" 
+>
+                                            buildTimeoutMinutes
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#name" 
+>
+                                            name
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#postDeployCommand" 
+>
+                                            postDeployCommand
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#runAcceptanceTests" 
+>
+                                            runAcceptanceTests
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#runAcceptanceTestsInProd" 
+>
+                                            runAcceptanceTestsInProd
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#runOrder" 
+>
+                                            runOrder
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#runUnitTests" 
+>
+                                            runUnitTests
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#serviceSourcePath" 
+>
+                                            serviceSourcePath
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="buildTimeoutMinutes"></a>
+                                        <span class="name "><b>buildTimeoutMinutes</b>
+                                            <a href="#buildTimeoutMinutes">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>buildTimeoutMinutes:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The build timeout in minutes for the service build definition.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="name"></a>
+                                        <span class="name "><b>name</b>
+                                            <a href="#name">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>name:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The name of the service build definition.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="postDeployCommand"></a>
+                                        <span class="name "><b>postDeployCommand</b>
+                                            <a href="#postDeployCommand">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>postDeployCommand:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The post-deploy command for the service build definition.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="runAcceptanceTests"></a>
+                                        <span class="name "><b>runAcceptanceTests</b>
+                                            <a href="#runAcceptanceTests">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>runAcceptanceTests:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Indicates whether to run acceptance tests for the service build definition.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="runAcceptanceTestsInProd"></a>
+                                        <span class="name "><b>runAcceptanceTestsInProd</b>
+                                            <a href="#runAcceptanceTestsInProd">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>runAcceptanceTestsInProd:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Indicates whether to run acceptance tests in production for the service build definition.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="runOrder"></a>
+                                        <span class="name "><b>runOrder</b>
+                                            <a href="#runOrder">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>runOrder:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The run order of the service build definition.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="runUnitTests"></a>
+                                        <span class="name "><b>runUnitTests</b>
+                                            <a href="#runUnitTests">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>runUnitTests:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Indicates whether to run unit tests for the service build definition.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="serviceSourcePath"></a>
+                                        <span class="name "><b>serviceSourcePath</b>
+                                            <a href="#serviceSourcePath">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>serviceSourcePath:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The path to the service source code.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import type { CloudFormationResource, CloudFormationResources } from &quot;serverless/aws&quot;;
+
+import snsResources from &quot;./sns-topics&quot;;
+
+/**
+ * Represents a service build definition for the API pipeline.
+ */
+export interface ServiceBuildDefinition {
+    /**
+     * The name of the service build definition.
+     */
+    name: string;
+    
+    /**
+     * The run order of the service build definition.
+     */
+    runOrder: number;
+    
+    /**
+     * The build timeout in minutes for the service build definition.
+     */
+    buildTimeoutMinutes?: number;
+    
+    /**
+     * The path to the service source code.
+     */
+    serviceSourcePath?: string;
+    
+    /**
+     * Indicates whether to run unit tests for the service build definition.
+     */
+    runUnitTests?: boolean;
+    
+    /**
+     * Indicates whether to run acceptance tests for the service build definition.
+     */
+    runAcceptanceTests?: boolean;
+    
+    /**
+     * Indicates whether to run acceptance tests in production for the service build definition.
+     */
+    runAcceptanceTestsInProd?: boolean;
+    
+    /**
+     * The post-deploy command for the service build definition.
+     */
+    postDeployCommand?: string;
+}
+
+/**
+ * Represents the stages in the API pipeline.
+ */
+const STAGES &#x3D; [&quot;test&quot;, &quot;staging&quot;, &quot;prod&quot;];
+
+/**
+ * Normalizes a service name by removing all hyphens.
+ * 
+ * @param name - The service name to be normalized.
+ * @returns The normalized service name.
+ */
+const normaliseServiceName &#x3D; (name: string) &#x3D;&gt; name.replace(/-/g, &quot;&quot;);
+/**
+ * Represents the configuration for a pipeline.
+ */
+export interface PipelineConfig {
+    /**
+     * The name of the application.
+     */
+    appName: string;
+    /**
+     * The region where the pipeline will be deployed.
+     */
+    region: string;
+    /**
+     * The prefix for the resource names used in the pipeline.
+     */
+    resourceNamePrefix: string;
+    /**
+     * Optional Slack configuration for sending notifications.
+     */
+    slack?: {
+        /**
+         * The Slack channel to send notifications to.
+         */
+        channel: string;
+        /**
+         * The webhook URL for sending notifications to Slack.
+         */
+        webhookUrl: string;
+    };
+    /**
+     * The target AWS account IDs for each stage of the pipeline.
+     */
+    targetAccountIds: {
+        [stage: string]: string;
+    };
+    /**
+     * The GitHub repository information.
+     */
+    github: {
+        /**
+         * The owner of the GitHub repository.
+         */
+        Owner: string;
+        /**
+         * The name of the GitHub repository.
+         */
+        Repo: string;
+        /**
+         * The branch to use for the pipeline.
+         */
+        Branch: string;
+    };
+    /**
+     * The build definitions for the services in the pipeline.
+     */
+    services: ServiceBuildDefinition[];
+}
+
+/**
+ * Retrieves all the resources required for the API pipeline.
+ * @param pipelineConfig - The configuration object for the pipeline.
+ * @returns An object containing the pipeline actions and resources.
+ */
+export default function getAllResources(pipelineConfig: PipelineConfig) {
+    const getRootInstallProjectName &#x3D; (stage: string) &#x3D;&gt; &#x60;${normaliseServiceName(pipelineConfig.resourceNamePrefix)}0RootInstall0${stage}&#x60;;
+    const getCodebuildProjectName &#x3D; (svc: ServiceBuildDefinition, stage: string) &#x3D;&gt; normaliseServiceName(&#x60;${pipelineConfig.resourceNamePrefix}0${svc.name}0${stage}&#x60;);
+    const getCodebuildRoleName &#x3D; (stage: string) &#x3D;&gt; &#x60;${normaliseServiceName(pipelineConfig.resourceNamePrefix)}0Role0${stage}&#x60;;
+
+    const getPipelineActionsForStage &#x3D; (stage: string) &#x3D;&gt; {
+        const svcRunOrderOffset &#x3D; 1;
+        return {
+            Name: &#x60;Deploy_${stage}&#x60;,
+            Actions: [
+                {
+                    Name: &#x60;base_install-${stage}&#x60;,
+                    ActionTypeId: {
+                        Category: &quot;Build&quot;,
+                        Owner: &quot;AWS&quot;,
+                        Provider: &quot;CodeBuild&quot;,
+                        Version: &quot;1&quot;,
+                    },
+                    Configuration: {
+                        ProjectName: getRootInstallProjectName(stage),
+                    },
+                    RunOrder: 1,
+                    InputArtifacts: [{ Name: &quot;sourceCode&quot; }],
+                },
+                ...pipelineConfig.services.map((svc) &#x3D;&gt; {
+                    return {
+                        Name: &#x60;${svc.name}-${stage}_deploy&#x60;,
+                        ActionTypeId: {
+                            Category: &quot;Build&quot;,
+                            Owner: &quot;AWS&quot;,
+                            Provider: &quot;CodeBuild&quot;,
+                            Version: &quot;1&quot;,
+                        },
+                        Configuration: {
+                            ProjectName: getCodebuildProjectName(svc, stage),
+                        },
+                        RunOrder: svc.runOrder + svcRunOrderOffset,
+                        InputArtifacts: [{ Name: &quot;sourceCode&quot; }],
+                        OutputArtifacts: [],
+                    };
+                }),
+            ],
+        };
+    };
+
+    const getDeployerRoleName &#x3D; () &#x3D;&gt; &#x60;${pipelineConfig.appName}-CodeBuildDeployer&#x60;;
+
+    // codebuild project to do an &#x60;npm install&#x60; at root as an input for the service-specific build projects
+    const getRootCodeBuildProject &#x3D; (stage: string) &#x3D;&gt; {
+        const buildRoleLogicalId &#x3D; getCodebuildRoleName(stage);
+        const projectName &#x3D; getRootInstallProjectName(stage);
+        const codebuildProject: CloudFormationResource &#x3D; {
+            Type: &quot;AWS::CodeBuild::Project&quot;,
+            Properties: {
+                Name: projectName,
+                Artifacts: { Type: &quot;CODEPIPELINE&quot; },
+                ServiceRole: {
+                    Ref: buildRoleLogicalId,
+                },
+                Environment: {
+                    Type: &quot;LINUX_CONTAINER&quot;,
+                    ComputeType: &quot;BUILD_GENERAL1_LARGE&quot;,
+                    Image: &quot;aws/codebuild/amazonlinux2-x86_64-standard:3.0&quot;,
+                    EnvironmentVariables: [
+                        {
+                            Name: &quot;DEPLOYER_ROLE_ARN&quot;,
+                            Value: &#x60;arn:aws:iam::${pipelineConfig.targetAccountIds[stage]}:role/${getDeployerRoleName()}&#x60;,
+                        },
+                        {
+                            Name: &quot;STAGE&quot;,
+                            Value: stage,
+                        },
+                    ],
+                },
+                Source: {
+                    Type: &quot;CODEPIPELINE&quot;,
+                    BuildSpec: &quot;./buildspec-root.yml&quot;,
+                },
+                TimeoutInMinutes: 15,
+            },
+        };
+        return { [projectName]: codebuildProject };
+    };
+
+    const getCodeBuildRole &#x3D; (stage: string) &#x3D;&gt; {
+        const buildRole: CloudFormationResource &#x3D; {
+            Type: &quot;AWS::IAM::Role&quot;,
+            Properties: {
+                Path: &quot;/&quot;,
+                AssumeRolePolicyDocument: {
+                    Version: &quot;2012-10-17&quot;,
+                    Statement: {
+                        Action: &quot;sts:AssumeRole&quot;,
+                        Effect: &quot;Allow&quot;,
+                        Principal: {
+                            Service: [
+                                &quot;codebuild.amazonaws.com&quot;,
+                            ],
+                        },
+                    },
+                },
+                Policies: [
+                    {
+                        PolicyName: &quot;CodeBuildPolicy&quot;,
+                        PolicyDocument: {
+                            Version: &quot;2012-10-17&quot;,
+                            Statement: [
+                                {
+                                    Action: &quot;sts:AssumeRole&quot;,
+                                    Effect: &quot;Allow&quot;,
+                                    Resource: [
+                                        &#x60;arn:aws:iam::${pipelineConfig.targetAccountIds[stage]}:role/${getDeployerRoleName()}&#x60;,
+                                    ],
+                                },
+                                {
+                                    Effect: &quot;Allow&quot;,
+                                    Action: &quot;s3:*&quot;,
+                                    Resource: [
+                                        { &quot;Fn::GetAtt&quot;: [&quot;apiPipelineArtifactsBucket&quot;, &quot;Arn&quot;] },
+                                        {
+                                            &quot;Fn::Sub&quot;: [
+                                                &quot;${arn}/*&quot;,
+                                                {
+                                                    arn:
+                                                        { &quot;Fn::GetAtt&quot;: [&quot;apiPipelineArtifactsBucket&quot;, &quot;Arn&quot;] },
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    Effect: &quot;Allow&quot;,
+                                    Action: [
+                                        &quot;logs:*&quot;,
+                                        &quot;cloudformation:*&quot;,
+                                        &quot;cloudwatch:*&quot;,
+                                        &quot;lambda:*&quot;,
+                                        &quot;iam:AttachRolePolicy&quot;,
+                                        &quot;iam:CreateRole&quot;,
+                                        &quot;iam:CreatePolicy&quot;,
+                                        &quot;iam:DetachRolePolicy&quot;,
+                                        &quot;iam:GetRole&quot;,
+                                        &quot;iam:DeleteRole&quot;,
+                                        &quot;iam:PutRolePolicy&quot;,
+                                        &quot;iam:PassRole&quot;,
+                                        &quot;ssm:*&quot;,
+                                        &quot;sns:*&quot;,
+                                    ],
+                                    Resource: &quot;*&quot;,
+                                },
+                            ],
+                        },
+                    },
+                ],
+            },
+        };
+        return buildRole;
+    };
+
+    const getCodeBuildResourcesForService &#x3D; (svc: ServiceBuildDefinition, stage: string) &#x3D;&gt; {
+        const buildRoleLogicalId &#x3D; getCodebuildRoleName(stage);
+        const codebuildProjectName &#x3D; getCodebuildProjectName(svc, stage);
+        const buildspecPath &#x3D; &quot;./buildspec-service.yml&quot;;
+        const runUnitTests &#x3D; svc.runUnitTests &amp;&amp; stage &#x3D;&#x3D;&#x3D; &quot;test&quot;; // only ever run unit tests in first stage (test)
+        const runAcceptanceTests &#x3D; svc.runAcceptanceTests &amp;&amp; (stage !&#x3D;&#x3D; &quot;prod&quot; || svc.runAcceptanceTestsInProd);
+        const codebuildProject: CloudFormationResource &#x3D; {
+            Type: &quot;AWS::CodeBuild::Project&quot;,
+            Properties: {
+                Name: codebuildProjectName,
+                Artifacts: { Type: &quot;CODEPIPELINE&quot; },
+                ServiceRole: {
+                    Ref: buildRoleLogicalId,
+                },
+                Environment: {
+                    Type: &quot;LINUX_CONTAINER&quot;,
+                    ComputeType: &quot;BUILD_GENERAL1_LARGE&quot;,
+                    Image: &quot;aws/codebuild/amazonlinux2-x86_64-standard:3.0&quot;,
+                    EnvironmentVariables: [
+                        {
+                            Name: &quot;DEPLOYER_ROLE_ARN&quot;,
+                            Value: &#x60;arn:aws:iam::${pipelineConfig.targetAccountIds[stage]}:role/${getDeployerRoleName()}&#x60;,
+                        },
+                        {
+                            Name: &quot;SRC_SVC_NAME&quot;,
+                            Value: svc.name,
+                        },
+                        {
+                            Name: &quot;STAGE&quot;,
+                            Value: stage,
+                        },
+                        {
+                            Name: &quot;RUN_UNIT_TESTS&quot;,
+                            Value: (runUnitTests || false).toString(),
+                        },
+                        {
+                            Name: &quot;RUN_ACCEPTANCE_TESTS&quot;,
+                            Value: (runAcceptanceTests || false).toString(),
+                        },
+                        {
+                            Name: &quot;POST_DEPLOY_COMMAND&quot;,
+                            Value: svc.postDeployCommand || &quot;&quot;,
+                        },
+                    ],
+                },
+                Source: {
+                    Type: &quot;CODEPIPELINE&quot;,
+                    BuildSpec: buildspecPath,
+                },
+                TimeoutInMinutes: svc.buildTimeoutMinutes || 30,
+            },
+        };
+
+        return { [codebuildProjectName]: codebuildProject };
+    };
+
+    const getCodeBuildResourcesForStage &#x3D; (stage: string): CloudFormationResources &#x3D;&gt; {
+        const buildRole &#x3D; getCodeBuildRole(stage);
+        const projects: CloudFormationResources &#x3D; {
+            ...getRootCodeBuildProject(stage),
+            ...pipelineConfig.services.reduce&lt;CloudFormationResources&gt;((all, svc) &#x3D;&gt; {
+                const resources &#x3D; getCodeBuildResourcesForService(svc, stage);
+                // eslint-disable-next-line no-param-reassign
+                all &#x3D; { ...all, ...resources };
+                return all;
+            }, {}),
+        };
+        return {
+            [getCodebuildRoleName(stage)]: buildRole,
+            ...projects,
+        };
+    };
+
+    const PIPELINE_NAME &#x3D; &#x60;${pipelineConfig.resourceNamePrefix}-main&#x60;;
+
+    const gitHubConnection: CloudFormationResource &#x3D; {
+        Type: &quot;AWS::CodeStarConnections::Connection&quot;,
+        Properties: {
+            ConnectionName: pipelineConfig.github.Repo,
+            ProviderType: &quot;GitHub&quot;,
+        },
+    };
+
+    const apiPipeline: CloudFormationResource &#x3D; {
+        Type: &quot;AWS::CodePipeline::Pipeline&quot;,
+        Properties: {
+            Name: PIPELINE_NAME,
+            ArtifactStore: {
+                Type: &quot;S3&quot;,
+                Location: { Ref: &quot;apiPipelineArtifactsBucket&quot; },
+            },
+            RestartExecutionOnUpdate: true,
+            RoleArn: { &quot;Fn::GetAtt&quot;: [&quot;apiPipelineRole&quot;, &quot;Arn&quot;] },
+            Stages: [
+                {
+                    Name: &quot;Source&quot;,
+                    Actions: [
+                        {
+                            Name: &quot;Source&quot;,
+                            ActionTypeId: {
+                                Category: &quot;Source&quot;,
+                                Owner: &quot;AWS&quot;,
+                                Version: 1,
+                                Provider: &quot;CodeStarSourceConnection&quot;,
+                            },
+                            Configuration: {
+                                BranchName: pipelineConfig.github.Branch,
+                                ConnectionArn: {
+                                    Ref: &quot;gitHubConnection&quot;,
+                                },
+                                FullRepositoryId: &#x60;${pipelineConfig.github.Owner}/${pipelineConfig.github.Repo}&#x60;,
+                            },
+                            RunOrder: 1,
+                            InputArtifacts: [],
+                            OutputArtifacts: [{ Name: &quot;sourceCode&quot; }],
+                        },
+                    ],
+                },
+                getPipelineActionsForStage(&quot;test&quot;),
+                getPipelineActionsForStage(&quot;staging&quot;),
+                {
+                    Name: &quot;ManualApproval_PreProd&quot;,
+                    Actions: [
+                        {
+                            Name: &quot;ManualApproval_PreProd&quot;,
+                            ActionTypeId: {
+                                Category: &quot;Approval&quot;,
+                                Owner: &quot;AWS&quot;,
+                                Provider: &quot;Manual&quot;,
+                                Version: &quot;1&quot;,
+                            },
+                            RunOrder: 1,
+                            Configuration: {
+                                NotificationArn: { Ref: &quot;CICDApprovalsTopic&quot; },
+                            },
+                        },
+                    ],
+                },
+                getPipelineActionsForStage(&quot;prod&quot;),
+            ],
+        },
+    };
+
+    const apiPipelineArtifactsBucket: CloudFormationResource &#x3D; {
+        Type: &quot;AWS::S3::Bucket&quot;,
+        DeletionPolicy: &quot;Delete&quot;,
+        Properties: {
+            AccessControl: &quot;Private&quot;,
+        },
+    };
+
+    const apiPipelineRole: CloudFormationResource &#x3D; {
+        Type: &quot;AWS::IAM::Role&quot;,
+        Properties: {
+            AssumeRolePolicyDocument: {
+                Version: &quot;2012-10-17&quot;,
+                Statement: {
+                    Effect: &quot;Allow&quot;,
+                    Principal: {
+                        Service: &quot;codepipeline.amazonaws.com&quot;,
+                    },
+                    Action: &quot;sts:AssumeRole&quot;,
+                },
+            },
+            Policies: [
+                {
+                    PolicyName: &quot;CodePipelinePolicy&quot;,
+                    PolicyDocument: {
+                        Version: &quot;2012-10-17&quot;,
+                        Statement: [
+                            {
+                                Effect: &quot;Allow&quot;,
+                                Action: &quot;s3:*&quot;,
+                                Resource: [
+                                    { &quot;Fn::GetAtt&quot;: [&quot;apiPipelineArtifactsBucket&quot;, &quot;Arn&quot;] },
+                                    {
+                                        &quot;Fn::Sub&quot;: [
+                                            &quot;${arn}/*&quot;,
+                                            {
+                                                arn:
+                                                    { &quot;Fn::GetAtt&quot;: [&quot;apiPipelineArtifactsBucket&quot;, &quot;Arn&quot;] },
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            {
+                                Effect: &quot;Allow&quot;,
+                                Action: &quot;logs:*&quot;,
+                                Resource: &quot;*&quot;,
+                            },
+                            {
+                                Effect: &quot;Allow&quot;,
+                                Action: &quot;codebuild:*&quot;,
+                                Resource: [
+                                    ...STAGES.flatMap(stage &#x3D;&gt; [
+                                        { &quot;Fn::GetAtt&quot;: [getRootInstallProjectName(stage), &quot;Arn&quot;] },
+                                        ...pipelineConfig.services.map((svc) &#x3D;&gt; {
+                                            return { &quot;Fn::GetAtt&quot;: [getCodebuildProjectName(svc, stage), &quot;Arn&quot;] };
+                                        }),
+                                    ]),
+                                ],
+                            },
+                            {
+                                Effect: &quot;Allow&quot;,
+                                Action: &quot;sns:Publish&quot;,
+                                Resource: [
+                                    { Ref: &quot;CICDApprovalsTopic&quot; },
+                                ],
+                            },
+                            {
+                                Effect: &quot;Allow&quot;,
+                                Action: &quot;codestar-connections:UseConnection&quot;,
+                                Resource: [
+                                    { Ref: &quot;gitHubConnection&quot; },
+                                ],
+                            },
+                        ],
+                    },
+                },
+            ],
+        },
+    };
+
+    const pipelineFailedRule: CloudFormationResources &#x3D; {
+        ApiPipelineFailedRule: {
+            Type: &quot;AWS::Events::Rule&quot;,
+            Properties: {
+                Description: &quot;Code Pipeline failures&quot;,
+                EventPattern: {
+                    source: [
+                        &quot;aws.codepipeline&quot;,
+                    ],
+                    &quot;detail-type&quot;: [
+                        &quot;CodePipeline Stage Execution State Change&quot;,
+                    ],
+                    detail: {
+                        pipeline: [PIPELINE_NAME],
+                        state: [
+                            &quot;FAILED&quot;,
+                            &quot;SUCCEEDED&quot;,
+                        ],
+                    },
+                },
+                Targets: [
+                    {
+                        Arn: { Ref: &quot;CICDNotificationsTopic&quot; },
+                        Id: &quot;cicd-server-notifications&quot;,
+                    },
+                ],
+            },
+        },
+    };
+
+    const allResources: CloudFormationResources &#x3D; {
+        apiPipeline,
+        apiPipelineArtifactsBucket,
+        apiPipelineRole,
+        gitHubConnection,
+        ...snsResources(pipelineConfig.resourceNamePrefix),
+        ...pipelineFailedRule,
+        ...getCodeBuildResourcesForStage(&quot;test&quot;),
+        ...getCodeBuildResourcesForStage(&quot;staging&quot;),
+        ...getCodeBuildResourcesForStage(&quot;prod&quot;),
+    };
+    return allResources;
+}
+
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'ServiceBuildDefinition.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
