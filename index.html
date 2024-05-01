@@ -1,0 +1,385 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>p3-server documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="./" class="navbar-brand">p3-server documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>sls-nodejs-template</h1>
+<p>Template for 3Advance Serverless NodeJS app</p>
+<h1>Template usage</h1>
+<ol>
+<li><p>Create a new repository using this template</p>
+</li>
+<li><p>Replace following placeholders with real values:</p>
+<ul>
+<li>p3-dev e.g. istruzi_dev</li>
+<li>{{AWS_SSO_START_URL}} e.g. <a href="https://p3.awsapps.com/start">https://p3.awsapps.com/start</a></li>
+<li>p3 e.g. istruzi</li>
+<li>{{CAPITALIZED_PROJECT_NAME}} e.g. Istruzi</li>
+<li>{{GCP_DEV_PROJECT_NAME}} e.g. istruzi-dev</li>
+<li>{{AWS_ACCOUNT_ID_TEST}}</li>
+<li>{{AWS_ACCOUNT_ID_STAGING}}</li>
+<li>{{AWS_ACCOUNT_ID_PROD}}</li>
+<li>p3-server e.g. Istruzi-Server</li>
+<li>{{SLACK_WEBHOOK_URL}} e.g. <a href="https://hooks.slack.com/services/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">https://hooks.slack.com/services/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</a></li>
+</ul>
+</li>
+<li><p>Remove Template usage section and proceed with the standard readme setup</p>
+</li>
+</ol>
+<h2>Architecture Overview</h2>
+<p>The repo is split up into the following service stacks whose code lives under the <code>services</code> top-level folder:</p>
+<ul>
+<li><code>infra</code> — defines core infrastructure that other services will rely on, e.g. DynamoDB table, SNS topics and Cognito user pools.</li>
+<li><code>main-api</code> — contains the main AppSync endpoint, mapping templates and Lambda functions for the p3 GraphQL API used by the mobile app. Depends on <code>infra</code>.</li>
+</ul>
+<p>All stacks are deployed separately. Most stacks reference a <code>common</code> package that contains JS modules for implementing shared logic such as models, data access, logging and publishing SNS events.</p>
+<h2>Overview of Environments (Stages) and AWS Accounts</h2>
+<p>Different AWS accounts are used to manage different environments (AKA stages) of the p3 app. The following AWS accounts are used:</p>
+<ul>
+<li><code>tools</code>: Hosts root domain in Route53, CloudTrail logs and IAM roles used as the entrypoint for third-party services which require multi-account access (such as GitHub Actions)</li>
+<li><code>dev</code>: for use by developers during feature development. Each developer will deploy their own stacks which will use their initials in the name to keep them isolated from each other</li>
+<li><code>staging</code>: deployed to by CI/CD pipeline for manual user QA</li>
+<li><code>prod</code>: production environment</li>
+</ul>
+<h2>Development environment setup</h2>
+<h3>Software installs</h3>
+<ul>
+<li>Node.js v18.2.0+</li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html">AWS CLI</a></li>
+</ul>
+<h3>Configure the AWS CLI to authenticate users with AWS IAM Identity Center</h3>
+<p>Run the <code>aws configure sso</code> command and provide your IAM Identity Center start URL and the AWS Region that hosts the Identity Center directory. See <a href="https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html">this article</a> for detailed steps configuring your profile with the aws configure sso wizard. Here is an example prompt:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">$ aws configure sso
+SSO session name (Recommended): p3-dev-sso
+SSO start URL [None]: {{AWS_SSO_START_URL}}
+SSO region [None]: us-east-1
+SSO registration scopes [None]: sso:account:access
+.
+.
+.
+CLI default client Region [None]: us-east-1
+CLI default output format [None]: json
+CLI profile name [123456789_example_ReadOnly]: p3-dev</code></pre></div><p>Once this is done, set the following env vars</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">unset AWS_PROFILE
+export AWS_SDK_LOAD_CONFIG=1
+export AWS_PROFILE=p3-dev
+export AWS_REGION=us-east-1
+</code></pre></div><p>Ongoing, login to the AWS CLI using the following command:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">aws sso login --profile p3-dev</code></pre></div><p>You may have to re-run this command periodically to ensure you are authenticated.</p>
+<h3>Install dependencies</h3>
+<p>Install all NPM packages for each service by running:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">npm install</code></pre></div><h3>Configuration and Secrets</h3>
+<p>Inside the <code>./config/dev</code> folder there are 2 files named <code>settings.sample.env</code> and <code>secrets.sample.env</code>. Create copies of these files in the same folder without the <code>.sample</code> in the filename. Then add the following settings to each file:</p>
+<h4>File: <code>secrets.env</code></h4>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>How to set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STRIPE_API_KEY</td>
+<td>Stripe API Key</td>
+<td>Find in 1Password Vault - Stripe Record.</td>
+</tr>
+</tbody>
+</table>
+<h4>File: <code>settings.env</code></h4>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>How to set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PERSONAL_DEV_ACCOUNT_NAME</td>
+<td>Unique ID for developer&#39;s 3Advance AWS account</td>
+<td>Should use your initials and must be alphanumeric (preferably 2 or 3 characters at most) and unique amongst other devs in the 3Advance team.</td>
+</tr>
+</tbody>
+</table>
+<p>Once you have updated both env files, run the following command to push these settings to AWS SSM Parameter Store, where the deployment script and runtime code will read them from:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">export $(cat ./config/dev/settings.env | xargs)
+export STAGE=${PERSONAL_DEV_ACCOUNT_NAME}
+export ENV_FOLDER=dev
+
+npm run config:deploy</code></pre></div><p>If in the future, you need to add new configuration settings or update existing values, then just update the env files and re-run the above command.</p>
+<h3>Setup one-time Route53 Hosted Zone for the <code>dev</code> AWS account (one-off)</h3>
+<p>If you are the developer who has setup the AWS Org then please see the <a href="./docs/dns.md">DNS docs</a>.</p>
+<h3>Deploy Core Infrastructure Resources</h3>
+<p>To deploy the DynamoDB table, hosted zone, CF, SNS topics and other core resources, run:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">npm run infra:deploy</code></pre></div><p>While the infra stack is being deployed, proceed to next section...</p>
+<h3>Delegate developer-specific subdomain to new hosted zone</h3>
+<p>Open a new bash terminal and set:
+export $(cat ./config/dev/settings.env | xargs)
+export STAGE=${PERSONAL_DEV_ACCOUNT_NAME}
+export ENV_FOLDER=dev
+export AWS_SDK_LOAD_CONFIG=1
+export AWS_PROFILE=p3-dev
+export AWS_REGION=us-east-1</p>
+<h3>Add NS records to dev hosted zone</h3>
+<p>Ensure you have jq installed on your system (brew install jq).</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">chmod +x ./scripts/route53/add-stage-ns-records-to-dev.sh
+./scripts/route53/add-stage-ns-records-to-dev.sh</code></pre></div><p>Now open the <a href="https://console.aws.amazon.com/cloudformation">CloudFormation Console</a> and ensure that the <code>infra</code> stack deployment completes successfully.</p>
+<h3>Add an A Record alias to cloudfront distribution</h3>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">chmod +x ./scripts/route53/create-dev-hosted-zone-cf-alias-record.sh
+./scripts/route53/create-dev-hosted-zone-cf-alias-record.sh</code></pre></div><h3>Deploy Main API service</h3>
+<p>To deploy the AppSync endpoint and Lambda functions used by the API, run:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">npm run main-api:deploy</code></pre></div><h2>Creating New GraphQL Queries and Mutations</h2>
+<p>Queries are used to fetch data from your API. They can be handled directly by AppSync using VTL templates or by invoking a Lambda function. The choice between VTL and Lambda depends on the complexity of the operation. If the operation involves simple CRUD operations, VTL is a good choice. For more complex operations, such as those involving business logic or multiple data sources, a Lambda function is more appropriate.</p>
+<h3>GraphQL Queries</h3>
+<ol>
+<li><p>Define your query in the <code>schema.user.graphql</code> file in <code>services/main-api/schemas/user/</code> directory.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-graphql">type UserQuery {
+  getMe: GetMeUser!
+  myNewUserQuery: MyNewType! # Add your new query here
+}</code></pre></div></li>
+<li><p>If using a Lambda function, create a new TypeScript file in the <code>services/main-api/src/graphql/</code> directory. This file should export a handler function that will be invoked when your query is called. Refer to <code>users/get-me.ts</code> for an example.</p>
+</li>
+<li><p>Update <code>serverless.user-api.yml</code> in <code>services/main-api/</code> directory to map your new query to the handler you just created.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-yaml">mappingTemplates:
+  - type: UserQuery
+  - field: myNewUserQuery
+  - dataSource: MyNewUserQuery
+  - request: common.lambda-invoke.request.vtl
+  - response: common.lambda.response.vtl</code></pre></div></li>
+</ol>
+<h3>GraphQL Mutations</h3>
+<p>Mutations are used to modify data. They are typically handled by a Lambda function due to the complexity of the operations.</p>
+<ol>
+<li><p>Define your mutation in the <code>schema.user.graphql</code> file.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-graphql">type UserMutation {
+  registerUser(input: RegisterUserInput): User
+  myNewUserMutation(input: MyNewInput): MyNewType! # Add your new mutation here
+}</code></pre></div></li>
+<li><p>Create a new TypeScript file in the <code>src/graphql/users/</code> directory. This file should export a handler function that will be invoked when your mutation is called. Refer to <code>register-user.ts</code> for an example.</p>
+</li>
+<li><p>Update <code>serverless.user-api.yml</code> to map your new mutation to the handler you just created.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-yaml">mappingTemplates:
+  - type: UserMutation
+  - field: myNewUserMutation
+  - dataSource: MyNewUserMutation
+  - request: common.lambda-invoke.request.vtl
+  - response: common.lambda.response.vtl</code></pre></div></li>
+</ol>
+<p>The previous examples outlines how to add queries and mutations to the user API. The process is quite similar for the Admin API. The main difference is that you would define your query in the <code>schema.admin.graphql</code> file and update the <code>serverless.admin-api.yml</code> file.</p>
+<h2>Tests</h2>
+<p>In order to test the API and the Lambda functions that act as the handler for each endpoint, 2 categories of automated tests can be run which serve different purposes during both the development and CICD process.</p>
+<p>The test cases (using the Jest framework) have been implemented in such a way that the same test can be run in either integration or acceptance mode by flipping a <code>TEST_MODE</code> environment variable.</p>
+<p>All scripts below use <code>main-api</code> but this can be replaced with any of the other services in order to invoke their tests.</p>
+<h3>Integration Tests</h3>
+<ul>
+<li>Directly invoke the Javascript function which acts as the Lambda handler. The Lambda handler still makes call to downstream cloud services (e.g. DynamoDB).</li>
+<li>Benefit is quicker dev workflow in that you don&#39;t need to deploy your Lambda function in order to run the test.</li>
+<li>Run using the following in your terminal:<ul>
+<li><code>npm run main-api:test-integration</code></li>
+</ul>
+</li>
+</ul>
+<h3>Acceptance Tests</h3>
+<ul>
+<li>Invokes the deployed AppSync endpoint over HTTP.</li>
+<li>Ensures that the full end-to-end API works as expected, and helps to catch deployment issues such as missing IAM permissions.</li>
+<li>Will be called in CICD process after deployment to an environment.</li>
+<li>Run using the following in your terminal:<ul>
+<li><code>npm run main-api:test-acceptance</code></li>
+</ul>
+</li>
+</ul>
+<h3>Run Tests in Debug Mode</h3>
+<ul>
+<li>Generate aws-export.env file:<ul>
+<li><code>npm run main-api:dotenv</code></li>
+</ul>
+</li>
+<li>Add breakpoints</li>
+<li>Select Run and Debug from left hand nav</li>
+<li>Press run button and step through your tests</li>
+</ul>
+<h2>DynamoDB Data Model</h2>
+<p>The DynamoDB data model design (including list of query patterns that it needs to support) is available in this <a href="https://docs.google.com/spreadsheets/d/1GEA8jVAU162Swa5Zh_elWo6WF4-m9Khk2cj37ajmUlg/edit?pli=1#gid=0">Google Sheet</a>.</p>
+<h2>Recommended VS Code Plugins</h2>
+<ul>
+<li>GraphQL for VSCode: adds syntax highlighting and auto-complete support for GraphQL schema files.</li>
+<li>Serverless IDE: adds intellisense and auto-complete support for AWS SAM, Serverless framework. You should install cfn-lint as well to add syntax support for CloudFormation.</li>
+<li>Velocity: adds syntax highlighting for Velocity templates.</li>
+<li>ESLint: Integrates ESLint into VS Code.</li>
+</ul>
+<h2>Production operations</h2>
+<p>See <a href="./docs/operations.md">Operations docs</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
